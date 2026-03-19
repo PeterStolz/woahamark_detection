@@ -1,0 +1,15 @@
+name: woahamark
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - numpy
+  - pillow
+  - scikit-learn
+  - scikit-image
+  - opencv
+  - matplotlib
+  - tqdm
+  - pip:
+    - tabulate

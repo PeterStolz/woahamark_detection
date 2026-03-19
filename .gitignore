@@ -1,0 +1,49 @@
+# Experiment logs (untracked by design)
+results.tsv
+run.log
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Environments
+.env
+.venv
+env/
+venv/
+
+# micromamba
+.micromamba/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Model artifacts / caches
+*.onnx
+*.pt
+*.pth
+*.pkl
+*.h5
+models/
+cache/
+.cache/
+
+# Temp
+tmp/
+temp/
+
+images
