@@ -2,13 +2,14 @@
 detect.py — Watermark detection pipeline.
 THIS FILE IS MODIFIED BY THE AGENT. Everything is fair game.
 
-Experiment 1: Random Forest on border-region features + template match scores.
+Experiment 2: Enhanced features — color (HSV), finer corner regions,
+aspect ratio, gradient orientation, plus template match scores.
 """
 
 import numpy as np
 from PIL import Image
 import cv2
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import GradientBoostingClassifier
 
 TRAIN_SET = []
 TEMPLATES = {}
@@ -49,11 +50,11 @@ def preprocess_templates(templates):
         orig_h, orig_w = gray.shape
 
         if orig_w > 1000:
-            target_widths = [20, 35, 55]
+            target_widths = [15, 25, 40, 60]
         elif orig_w > 300:
-            target_widths = [80, 140, 220]
+            target_widths = [60, 100, 160, 250]
         else:
-            target_widths = [50, 80, 130]
+            target_widths = [40, 70, 110, 160]
 
         scales = []
         for tw in target_widths:
@@ -99,36 +100,95 @@ def get_template_scores(img_edges, h, w):
     return scores
 
 
-def extract_features(img_gray, img_edges, h, w, tmpl_scores):
+def region_features(gray_region, edge_region, color_region_hsv=None):
+    """Extract stats from a single region."""
+    feats = []
+    # Grayscale stats
+    feats.append(float(gray_region.mean()))
+    feats.append(float(gray_region.std()))
+    feats.append(float(np.percentile(gray_region, 95)))
+    feats.append(float(np.percentile(gray_region, 5)))
+    feats.append(float(np.percentile(gray_region, 95) - np.percentile(gray_region, 5)))  # range
+
+    # Edge stats
+    feats.append(float(edge_region.mean()) / 255.0)
+
+    # Gradient orientation — horizontal vs vertical edges
+    sobel_x = cv2.Sobel(gray_region, cv2.CV_64F, 1, 0, ksize=3)
+    sobel_y = cv2.Sobel(gray_region, cv2.CV_64F, 0, 1, ksize=3)
+    horiz_energy = float(np.abs(sobel_y).mean())
+    vert_energy = float(np.abs(sobel_x).mean())
+    feats.append(horiz_energy)
+    feats.append(vert_energy)
+    feats.append(horiz_energy / (vert_energy + 1e-6))  # text tends to be horizontal
+
+    # Color stats (HSV)
+    if color_region_hsv is not None:
+        feats.append(float(color_region_hsv[:, :, 0].mean()))  # hue
+        feats.append(float(color_region_hsv[:, :, 0].std()))
+        feats.append(float(color_region_hsv[:, :, 1].mean()))  # saturation
+        feats.append(float(color_region_hsv[:, :, 1].std()))
+        feats.append(float(color_region_hsv[:, :, 2].mean()))  # value
+        feats.append(float(color_region_hsv[:, :, 2].std()))
+    else:
+        feats.extend([0.0] * 6)
+
+    return feats
+
+
+def extract_features(img_gray, img_edges, img_hsv, h, w, tmpl_scores):
     """Build feature vector from region stats + template scores."""
     feats = []
+
+    # Coarse regions (1/6 of image)
     ch = max(h // 6, 10)
     cw = max(w // 6, 10)
 
-    region_specs = [
-        (0, ch, 0, cw),                    # top-left
-        (0, ch, w - cw, w),                # top-right
-        (h - ch, h, 0, cw),                # bottom-left
-        (h - ch, h, w - cw, w),            # bottom-right
+    coarse_specs = [
+        (0, ch, 0, cw),                    # top-left corner
+        (0, ch, w - cw, w),                # top-right corner
+        (h - ch, h, 0, cw),                # bottom-left corner
+        (h - ch, h, w - cw, w),            # bottom-right corner
         (0, ch, 0, w),                      # top strip
         (h - ch, h, 0, w),                  # bottom strip
     ]
 
-    for y1, y2, x1, x2 in region_specs:
-        r = img_gray[y1:y2, x1:x2]
-        e = img_edges[y1:y2, x1:x2]
-        feats.append(float(r.mean()))
-        feats.append(float(r.std()))
-        feats.append(float(np.percentile(r, 95)))
-        feats.append(float(np.percentile(r, 5)))
-        feats.append(float(e.mean()) / 255.0)
+    for y1, y2, x1, x2 in coarse_specs:
+        feats.extend(region_features(
+            img_gray[y1:y2, x1:x2],
+            img_edges[y1:y2, x1:x2],
+            img_hsv[y1:y2, x1:x2],
+        ))
 
+    # Fine-grained bottom-right corner (1/10 of image — where most logos sit)
+    fh = max(h // 10, 8)
+    fw = max(w // 10, 8)
+    feats.extend(region_features(
+        img_gray[h - fh:, w - fw:],
+        img_edges[h - fh:, w - fw:],
+        img_hsv[h - fh:, w - fw:],
+    ))
+
+    # Fine-grained top strip (where TPDNE text sits — top 1/12)
+    th = max(h // 12, 8)
+    feats.extend(region_features(
+        img_gray[:th, :],
+        img_edges[:th, :],
+        img_hsv[:th, :],
+    ))
+
+    # Global features
     feats.append(float(img_gray.mean()))
     feats.append(float(img_gray.std()))
     feats.append(float(h))
     feats.append(float(w))
     feats.append(float(h) / float(w) if w > 0 else 1.0)
 
+    # Global color features
+    feats.append(float(img_hsv[:, :, 1].mean()))  # overall saturation
+    feats.append(float(img_hsv[:, :, 1].std()))
+
+    # Template match scores
     for name in sorted(tmpl_scores.keys()):
         feats.append(tmpl_scores[name])
 
@@ -136,7 +196,7 @@ def extract_features(img_gray, img_edges, h, w, tmpl_scores):
 
 
 def load_image(image_path, max_dim=512):
-    """Load, resize, return gray + edges + dims."""
+    """Load, resize, return gray + edges + hsv + dims."""
     img = cv2.imread(image_path)
     if img is None:
         pil_img = Image.open(image_path).convert("RGB")
@@ -148,7 +208,8 @@ def load_image(image_path, max_dim=512):
     h, w = img.shape[:2]
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     edges = cv2.Canny(gray, 50, 150)
-    return gray, edges, h, w
+    hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+    return gray, edges, hsv, h, w
 
 
 def setup(train_set: list[dict], templates: dict[str, str]):
@@ -161,24 +222,29 @@ def setup(train_set: list[dict], templates: dict[str, str]):
     X, y = [], []
     for sample in train_set:
         try:
-            gray, edges, h, w = load_image(sample["path"])
+            gray, edges, hsv, h, w = load_image(sample["path"])
             ts = get_template_scores(edges, h, w)
-            feats = extract_features(gray, edges, h, w, ts)
+            feats = extract_features(gray, edges, hsv, h, w, ts)
             X.append(feats)
             y.append(sample["label"])
         except Exception:
             continue
 
-    MODEL = RandomForestClassifier(n_estimators=200, random_state=42, n_jobs=-1)
+    MODEL = GradientBoostingClassifier(
+        n_estimators=300,
+        max_depth=5,
+        learning_rate=0.1,
+        random_state=42,
+    )
     MODEL.fit(np.array(X), y)
 
 
 def detect(image_path: str) -> dict:
-    """Detect watermarks using trained Random Forest."""
+    """Detect watermarks using trained classifier."""
     try:
-        gray, edges, h, w = load_image(image_path)
+        gray, edges, hsv, h, w = load_image(image_path)
         ts = get_template_scores(edges, h, w)
-        feats = extract_features(gray, edges, h, w, ts)
+        feats = extract_features(gray, edges, hsv, h, w, ts)
 
         pred = MODEL.predict([feats])[0]
         proba = MODEL.predict_proba([feats])[0]
