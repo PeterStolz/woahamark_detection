@@ -2,8 +2,8 @@
 detect.py — Watermark detection pipeline.
 THIS FILE IS MODIFIED BY THE AGENT. Everything is fair game.
 
-Experiment 3: Add local contrast features, DCT-based frequency features,
-grayscale template matching, and class-balanced training.
+Experiment 4: Full template matching + histogram/unsharp/cross-region features
++ GBT classifier with class balancing. Fast GBT inference with max ~30ms/image.
 """
 
 import numpy as np
@@ -30,7 +30,7 @@ TEMPLATE_LABEL_MAP = {
 
 
 def preprocess_templates(templates):
-    """Load templates and create edge + grayscale maps at multiple scales."""
+    """Load templates with edge + grayscale at multiple scales."""
     info = []
     for name, path in templates.items():
         tmpl = cv2.imread(path, cv2.IMREAD_UNCHANGED)
@@ -51,12 +51,13 @@ def preprocess_templates(templates):
         edges = cv2.Canny(gray_masked, 30, 100)
         orig_h, orig_w = gray.shape
 
+        # More scales for better matching
         if orig_w > 1000:
-            target_widths = [15, 25, 40, 60]
+            target_widths = [15, 25, 40, 60, 80]
         elif orig_w > 300:
-            target_widths = [60, 100, 160, 250]
+            target_widths = [60, 100, 160, 220, 300]
         else:
-            target_widths = [40, 70, 110, 160]
+            target_widths = [40, 70, 110, 160, 200]
 
         scales = []
         for tw in target_widths:
@@ -77,12 +78,12 @@ def preprocess_templates(templates):
 
 
 def get_template_scores(img_edges, img_gray, h, w):
-    """Best template match score per template (both edge and grayscale matching)."""
+    """Best template match score per template — edge + grayscale, 4 regions."""
     edge_regions = [
-        img_edges[h * 2 // 3:, w // 2:],
-        img_edges[h * 2 // 3:, :w // 2],
-        img_edges[:h // 4, :],
-        img_edges[h * 3 // 4:, :],
+        img_edges[h * 2 // 3:, w // 2:],       # bottom-right
+        img_edges[h * 2 // 3:, :w // 2],        # bottom-left
+        img_edges[:h // 4, :],                   # top strip
+        img_edges[h * 3 // 4:, :],               # bottom strip
     ]
     gray_regions = [
         img_gray[h * 2 // 3:, w // 2:],
@@ -122,43 +123,48 @@ def get_template_scores(img_edges, img_gray, h, w):
 
 
 def local_contrast_features(gray_region):
-    """Compute local contrast: ratio of pixels brighter than local neighborhood."""
+    """Compute local contrast features."""
     if gray_region.size < 100:
         return [0.0, 0.0, 0.0]
     gray_f = gray_region.astype(np.float32)
     kernel = np.ones((7, 7), np.float32) / 49
     local_mean = cv2.filter2D(gray_f, -1, kernel)
     diff = gray_f - local_mean
-
-    bright_ratio = float((diff > 15).sum()) / diff.size
-    dark_ratio = float((diff < -15).sum()) / diff.size
-    contrast_std = float(diff.std())
-    return [bright_ratio, dark_ratio, contrast_std]
+    return [
+        float((diff > 15).sum()) / diff.size,
+        float((diff < -15).sum()) / diff.size,
+        float(diff.std()),
+    ]
 
 
 def dct_features(gray_region, block_size=32):
     """Compute DCT energy distribution features."""
     if gray_region.shape[0] < block_size or gray_region.shape[1] < block_size:
         return [0.0, 0.0, 0.0]
-
-    # Take a central block
     cy, cx = gray_region.shape[0] // 2, gray_region.shape[1] // 2
     half = block_size // 2
     block = gray_region[cy - half:cy + half, cx - half:cx + half].astype(np.float32)
     dct = cv2.dct(block)
-
-    # Energy in low, mid, high frequency bands
     total = float(np.abs(dct).sum()) + 1e-6
     low = float(np.abs(dct[:block_size // 4, :block_size // 4]).sum())
     mid = float(np.abs(dct[block_size // 4:block_size // 2, block_size // 4:block_size // 2]).sum())
     high = float(np.abs(dct[block_size // 2:, block_size // 2:]).sum())
-
     return [low / total, mid / total, high / total]
 
 
+def unsharp_features(gray_region):
+    """Detect overlay artifacts by comparing sharp vs blurred."""
+    if gray_region.shape[0] < 10 or gray_region.shape[1] < 10:
+        return [0.0, 0.0]
+    blurred = cv2.GaussianBlur(gray_region, (5, 5), 1.5)
+    diff = gray_region.astype(float) - blurred.astype(float)
+    return [float(np.abs(diff).mean()), float((np.abs(diff) > 10).sum() / diff.size)]
+
+
 def region_features(gray_region, edge_region, hsv_region=None):
-    """Extract stats from a single region."""
+    """Extract comprehensive region features."""
     feats = []
+    # Basic stats
     feats.append(float(gray_region.mean()))
     feats.append(float(gray_region.std()))
     feats.append(float(np.percentile(gray_region, 95)))
@@ -166,6 +172,7 @@ def region_features(gray_region, edge_region, hsv_region=None):
     feats.append(float(np.percentile(gray_region, 95) - np.percentile(gray_region, 5)))
     feats.append(float(edge_region.mean()) / 255.0)
 
+    # Gradient orientation
     sobel_x = cv2.Sobel(gray_region, cv2.CV_64F, 1, 0, ksize=3)
     sobel_y = cv2.Sobel(gray_region, cv2.CV_64F, 0, 1, ksize=3)
     horiz_energy = float(np.abs(sobel_y).mean())
@@ -177,6 +184,14 @@ def region_features(gray_region, edge_region, hsv_region=None):
     # Local contrast
     feats.extend(local_contrast_features(gray_region))
 
+    # Unsharp overlay detection
+    feats.extend(unsharp_features(gray_region))
+
+    # Pixel histogram
+    hist, _ = np.histogram(gray_region.ravel(), bins=8, range=(0, 256), density=True)
+    feats.extend(hist.tolist())
+
+    # Color stats
     if hsv_region is not None:
         feats.append(float(hsv_region[:, :, 0].mean()))
         feats.append(float(hsv_region[:, :, 0].std()))
@@ -191,19 +206,20 @@ def region_features(gray_region, edge_region, hsv_region=None):
 
 
 def extract_features(img_gray, img_edges, img_hsv, h, w, tmpl_scores):
-    """Build feature vector."""
+    """Build complete feature vector."""
     feats = []
 
     ch = max(h // 6, 10)
     cw = max(w // 6, 10)
 
+    # Coarse regions (6 regions)
     coarse_specs = [
-        (0, ch, 0, cw),
-        (0, ch, w - cw, w),
-        (h - ch, h, 0, cw),
-        (h - ch, h, w - cw, w),
-        (0, ch, 0, w),
-        (h - ch, h, 0, w),
+        (0, ch, 0, cw),                    # top-left
+        (0, ch, w - cw, w),                # top-right
+        (h - ch, h, 0, cw),                # bottom-left
+        (h - ch, h, w - cw, w),            # bottom-right
+        (0, ch, 0, w),                      # top strip
+        (h - ch, h, 0, w),                  # bottom strip
     ]
 
     for y1, y2, x1, x2 in coarse_specs:
@@ -213,7 +229,7 @@ def extract_features(img_gray, img_edges, img_hsv, h, w, tmpl_scores):
             img_hsv[y1:y2, x1:x2],
         ))
 
-    # Fine-grained bottom-right (1/10)
+    # Fine-grained bottom-right (1/10 — typical watermark location)
     fh = max(h // 10, 8)
     fw = max(w // 10, 8)
     feats.extend(region_features(
@@ -222,7 +238,7 @@ def extract_features(img_gray, img_edges, img_hsv, h, w, tmpl_scores):
         img_hsv[h - fh:, w - fw:],
     ))
 
-    # Fine-grained top strip (1/12)
+    # Fine-grained top strip (1/12 — TPDNE text location)
     th = max(h // 12, 8)
     feats.extend(region_features(
         img_gray[:th, :],
@@ -230,9 +246,30 @@ def extract_features(img_gray, img_edges, img_hsv, h, w, tmpl_scores):
         img_hsv[:th, :],
     ))
 
-    # DCT features for bottom-right and top regions
+    # Very fine bottom-right (1/15 — tiny gemini star)
+    fh2 = max(h // 15, 6)
+    fw2 = max(w // 15, 6)
+    feats.extend(region_features(
+        img_gray[h - fh2:, w - fw2:],
+        img_edges[h - fh2:, w - fw2:],
+        img_hsv[h - fh2:, w - fw2:],
+    ))
+
+    # DCT features for key regions
     feats.extend(dct_features(img_gray[h * 2 // 3:, w // 2:]))
     feats.extend(dct_features(img_gray[:h // 4, :]))
+
+    # Cross-region contrast (corner vs center)
+    center = img_gray[h // 3:2 * h // 3, w // 3:2 * w // 3]
+    center_mean = float(center.mean())
+    center_std = float(center.std())
+    br_corner = img_gray[h - ch:, w - cw:]
+    tl_corner = img_gray[:ch, :cw]
+    top_strip = img_gray[:ch, :]
+    feats.append(float(br_corner.mean()) - center_mean)
+    feats.append(float(tl_corner.mean()) - center_mean)
+    feats.append(float(br_corner.std()) - center_std)
+    feats.append(float(top_strip.mean()) - center_mean)
 
     # Global features
     feats.append(float(img_gray.mean()))
@@ -242,8 +279,6 @@ def extract_features(img_gray, img_edges, img_hsv, h, w, tmpl_scores):
     feats.append(float(h) / float(w) if w > 0 else 1.0)
     feats.append(float(img_hsv[:, :, 1].mean()))
     feats.append(float(img_hsv[:, :, 1].std()))
-
-    # Global local contrast
     feats.extend(local_contrast_features(img_gray))
 
     # Template match scores
@@ -288,18 +323,19 @@ def setup(train_set: list[dict], templates: dict[str, str]):
         except Exception:
             continue
 
-    # Compute class weights for balancing
+    # Class-balanced sample weights
     from collections import Counter
     counts = Counter(y)
     total = len(y)
     n_classes = len(counts)
-    sample_weights = [total / (n_classes * counts[label]) for label in y]
+    sample_weights = np.array([total / (n_classes * counts[label]) for label in y])
 
     MODEL = GradientBoostingClassifier(
-        n_estimators=300,
+        n_estimators=400,
         max_depth=5,
         learning_rate=0.1,
         random_state=42,
+        subsample=0.8,
     )
     MODEL.fit(np.array(X), y, sample_weight=sample_weights)
 
