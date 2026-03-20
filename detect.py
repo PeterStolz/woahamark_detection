@@ -391,7 +391,7 @@ def detect(image_path: str) -> dict:
             clean_idx = list(classes).index("clean")
             proba_no_clean = proba.copy()
             proba_no_clean[clean_idx] = 0
-            if proba_no_clean.max() > 0.05:
+            if proba_no_clean.max() > 0.005:
                 best_wm_idx = int(np.argmax(proba_no_clean))
                 pred = classes[best_wm_idx]
                 multi_confidence = float(proba_no_clean[best_wm_idx])
