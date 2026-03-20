@@ -14,6 +14,7 @@ from sklearn.ensemble import GradientBoostingClassifier
 TRAIN_SET = []
 TEMPLATES = {}
 MODEL = None
+BINARY_MODEL = None
 TEMPLATE_INFO = []
 
 TEMPLATE_LABEL_MAP = {
@@ -306,7 +307,7 @@ def load_image(image_path, max_dim=768):
 
 
 def setup(train_set: list[dict], templates: dict[str, str]):
-    global TRAIN_SET, TEMPLATES, MODEL, TEMPLATE_INFO
+    global TRAIN_SET, TEMPLATES, MODEL, BINARY_MODEL, TEMPLATE_INFO
     TRAIN_SET = train_set
     TEMPLATES = templates
 
@@ -332,6 +333,26 @@ def setup(train_set: list[dict], templates: dict[str, str]):
     weight_map = {label: (total / (n_classes * count)) ** 1.2 for label, count in counts.items()}
     sample_weights = np.array([weight_map[label] for label in y])
 
+    X_arr = np.array(X)
+
+    # Stage 1: Binary classifier (clean vs. watermarked) — more sensitive
+    y_binary = ["clean" if label == "clean" else "watermarked" for label in y]
+    binary_counts = Counter(y_binary)
+    binary_weights = np.array([
+        (total / (2 * binary_counts[label])) ** 1.3  # strong boost for watermarked
+        for label in y_binary
+    ])
+
+    BINARY_MODEL = GradientBoostingClassifier(
+        n_estimators=300,
+        max_depth=5,
+        learning_rate=0.1,
+        random_state=42,
+        subsample=0.8,
+    )
+    BINARY_MODEL.fit(X_arr, y_binary, sample_weight=binary_weights)
+
+    # Stage 2: Multi-class classifier
     MODEL = GradientBoostingClassifier(
         n_estimators=500,
         max_depth=6,
@@ -340,21 +361,42 @@ def setup(train_set: list[dict], templates: dict[str, str]):
         subsample=0.8,
         min_samples_leaf=3,
     )
-    MODEL.fit(np.array(X), y, sample_weight=sample_weights)
+    MODEL.fit(X_arr, y, sample_weight=sample_weights)
 
 
 def detect(image_path: str) -> dict:
-    """Detect watermarks using trained classifier."""
+    """Detect watermarks using two-stage classification."""
     try:
         gray, edges, hsv, h, w = load_image(image_path)
         ts = get_template_scores(edges, gray, h, w)
         feats = extract_features(gray, edges, hsv, h, w, ts)
 
+        # Stage 1: Binary detection (sensitive — catches more watermarks)
+        binary_proba = BINARY_MODEL.predict_proba([feats])[0]
+        binary_classes = BINARY_MODEL.classes_
+        wm_idx = list(binary_classes).index("watermarked")
+        wm_prob = binary_proba[wm_idx]
+
+        # Stage 2: Multi-class prediction
         pred = MODEL.predict([feats])[0]
         proba = MODEL.predict_proba([feats])[0]
-        confidence = float(proba.max())
-        binary = "clean" if pred == "clean" else "watermarked"
+        multi_confidence = float(proba.max())
 
-        return {"binary": binary, "label": pred, "confidence": confidence}
+        # Decision logic: if binary detector says watermarked with decent confidence,
+        # trust the multi-class prediction even if it says clean
+        if pred == "clean" and wm_prob > 0.55:
+            # Binary says watermarked but multi-class says clean
+            # Use multi-class probas excluding clean
+            classes = MODEL.classes_
+            clean_idx = list(classes).index("clean")
+            proba_no_clean = proba.copy()
+            proba_no_clean[clean_idx] = 0
+            if proba_no_clean.max() > 0.05:
+                best_wm_idx = int(np.argmax(proba_no_clean))
+                pred = classes[best_wm_idx]
+                multi_confidence = float(proba_no_clean[best_wm_idx])
+
+        binary = "clean" if pred == "clean" else "watermarked"
+        return {"binary": binary, "label": pred, "confidence": multi_confidence}
     except Exception:
         return {"binary": "clean", "label": "clean", "confidence": 0.0}
