@@ -384,7 +384,7 @@ def detect(image_path: str) -> dict:
 
         # Decision logic: if binary detector says watermarked with decent confidence,
         # trust the multi-class prediction even if it says clean
-        if pred == "clean" and wm_prob > 0.55:
+        if pred == "clean" and wm_prob > 0.35:
             # Binary says watermarked but multi-class says clean
             # Use multi-class probas excluding clean
             classes = MODEL.classes_
