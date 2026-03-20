@@ -323,19 +323,22 @@ def setup(train_set: list[dict], templates: dict[str, str]):
         except Exception:
             continue
 
-    # Class-balanced sample weights
+    # Class-balanced sample weights with extra boost for minority classes
     from collections import Counter
     counts = Counter(y)
     total = len(y)
     n_classes = len(counts)
-    sample_weights = np.array([total / (n_classes * counts[label]) for label in y])
+    # Stronger weighting: use sqrt to further boost rare classes
+    weight_map = {label: (total / (n_classes * count)) ** 1.2 for label, count in counts.items()}
+    sample_weights = np.array([weight_map[label] for label in y])
 
     MODEL = GradientBoostingClassifier(
-        n_estimators=400,
-        max_depth=5,
-        learning_rate=0.1,
+        n_estimators=500,
+        max_depth=6,
+        learning_rate=0.08,
         random_state=42,
         subsample=0.8,
+        min_samples_leaf=3,
     )
     MODEL.fit(np.array(X), y, sample_weight=sample_weights)
 
