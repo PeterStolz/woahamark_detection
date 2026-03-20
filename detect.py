@@ -288,7 +288,7 @@ def extract_features(img_gray, img_edges, img_hsv, h, w, tmpl_scores):
     return feats
 
 
-def load_image(image_path, max_dim=512):
+def load_image(image_path, max_dim=768):
     """Load, resize, return gray + edges + hsv + dims."""
     img = cv2.imread(image_path)
     if img is None:
