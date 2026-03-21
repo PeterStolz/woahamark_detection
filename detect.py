@@ -9,6 +9,9 @@ Experiment 4: Full template matching + histogram/unsharp/cross-region features
 import numpy as np
 from PIL import Image
 import cv2
+import torch
+import timm
+import torchvision.transforms as T
 from sklearn.ensemble import GradientBoostingClassifier
 
 TRAIN_SET = []
@@ -16,6 +19,9 @@ TEMPLATES = {}
 MODEL = None
 BINARY_MODEL = None
 TEMPLATE_INFO = []
+WM_CNN = None
+WM_CNN_TRANSFORM = None
+WM_CNN_DEVICE = None
 
 TEMPLATE_LABEL_MAP = {
     "dalle_watermark": "dalle",
@@ -306,6 +312,60 @@ def load_image(image_path, max_dim=768):
     return gray, edges, hsv, h, w
 
 
+def _map_convnext_key(ck):
+    """Map boomb0om ConvNeXt checkpoint keys to timm key names."""
+    if ck.startswith('downsample_layers.0.0.'): return ck.replace('downsample_layers.0.0.', 'stem.0.')
+    if ck.startswith('downsample_layers.0.1.'): return ck.replace('downsample_layers.0.1.', 'stem.1.')
+    for i in range(1, 4):
+        if ck.startswith(f'downsample_layers.{i}.'): return ck.replace(f'downsample_layers.{i}.', f'stages.{i}.downsample.')
+    if ck.startswith('stages.'):
+        parts = ck.split('.')
+        if len(parts) >= 3 and parts[2].isdigit(): parts.insert(2, 'blocks')
+        mk = '.'.join(parts)
+        return mk.replace('.dwconv.', '.conv_dw.').replace('.pwconv1.', '.mlp.fc1.').replace('.pwconv2.', '.mlp.fc2.')
+    if ck.startswith('norm.'): return ck.replace('norm.', 'head.norm.')
+    if ck.startswith('head.'): return 'head.fc.' + ck[5:]
+    return ck
+
+
+def load_watermark_cnn():
+    """Load pre-trained boomb0om ConvNeXt-Tiny watermark detector."""
+    global WM_CNN, WM_CNN_TRANSFORM, WM_CNN_DEVICE
+    from huggingface_hub import hf_hub_download
+    import time as _t
+    t0 = _t.time()
+
+    WM_CNN_DEVICE = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
+    model_path = hf_hub_download(
+        repo_id='boomb0om/watermark-detectors',
+        filename='convnext-tiny_watermarks_detector.pth',
+        cache_dir='/tmp/hf_cache',
+    )
+    model = timm.create_model('convnext_tiny', pretrained=False, num_classes=2)
+    model.head.fc = torch.nn.Sequential(
+        torch.nn.Linear(768, 512), torch.nn.ReLU(),
+        torch.nn.Linear(512, 256), torch.nn.ReLU(),
+        torch.nn.Linear(256, 2),
+    )
+    state = torch.load(model_path, map_location='cpu', weights_only=True)
+    model.load_state_dict({_map_convnext_key(k): v for k, v in state.items()})
+    WM_CNN = model.to(WM_CNN_DEVICE).eval()
+    WM_CNN_TRANSFORM = T.Compose([
+        T.Resize((256, 256)), T.ToTensor(),
+        T.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+    ])
+    print(f"  WM CNN loaded on {WM_CNN_DEVICE} in {_t.time()-t0:.1f}s", flush=True)
+
+
+def get_wm_cnn_prob(image_path):
+    """Get watermark probability from pre-trained CNN."""
+    img = Image.open(image_path).convert("RGB")
+    tensor = WM_CNN_TRANSFORM(img).unsqueeze(0).to(WM_CNN_DEVICE)
+    with torch.no_grad():
+        probs = torch.softmax(WM_CNN(tensor), dim=1)[0]
+    return float(probs[0].item())  # index 0 = watermark prob
+
+
 def setup(train_set: list[dict], templates: dict[str, str]):
     global TRAIN_SET, TEMPLATES, MODEL, BINARY_MODEL, TEMPLATE_INFO
     TRAIN_SET = train_set
@@ -313,16 +373,24 @@ def setup(train_set: list[dict], templates: dict[str, str]):
 
     TEMPLATE_INFO = preprocess_templates(templates)
 
+    # Load pre-trained watermark CNN
+    load_watermark_cnn()
+
     X, y = [], []
-    for sample in train_set:
+    for i, sample in enumerate(train_set):
         try:
             gray, edges, hsv, h, w = load_image(sample["path"])
             ts = get_template_scores(edges, gray, h, w)
             feats = extract_features(gray, edges, hsv, h, w, ts)
+            # Add CNN watermark probability as feature
+            cnn_prob = get_wm_cnn_prob(sample["path"])
+            feats.append(cnn_prob)
             X.append(feats)
             y.append(sample["label"])
         except Exception:
             continue
+        if (i + 1) % 300 == 0:
+            print(f"  features: {i+1}/{len(train_set)}", flush=True)
 
     # Class-balanced sample weights with extra boost for minority classes
     from collections import Counter
@@ -370,6 +438,7 @@ def detect(image_path: str) -> dict:
         gray, edges, hsv, h, w = load_image(image_path)
         ts = get_template_scores(edges, gray, h, w)
         feats = extract_features(gray, edges, hsv, h, w, ts)
+        feats.append(get_wm_cnn_prob(image_path))
 
         # Stage 1: Binary detection (sensitive — catches more watermarks)
         binary_proba = BINARY_MODEL.predict_proba([feats])[0]
