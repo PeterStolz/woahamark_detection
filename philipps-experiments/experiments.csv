@@ -1,0 +1,17 @@
+phase,variant,roi_frac,scales,extra,val_macro_f1,val_threshold,test_macro_f1,test_auc,notes
+phase1,baseline_canny_tm_ccoeff,0.18,"0.4-2.0","none",0.4224,0.200,0.4231,0.7351,"degenerate (all-neg) at threshold>=0.2; pos score max 0.147 — sweep range doesn't cover actual scores"
+phase3,V0_baseline,0.18,"(0.4, 0.6, 0.8, 1.0, 1.25, 1.6, 2.0)",,False,0,0.7295,0.110,
+phase3,V1_highpass,0.18,"(0.4, 0.6, 0.8, 1.0, 1.25, 1.6, 2.0)",3.0,False,0,0.7449,0.110,
+phase3,V2_distancetransform,0.18,"(0.4, 0.6, 0.8, 1.0, 1.25, 1.6, 2.0)",,True,0,0.5255,0.050,
+phase3,V3_roi12,0.12,"(0.4, 0.6, 0.8, 1.0, 1.25, 1.6, 2.0)",,False,0,0.4787,0.090,
+phase3,V3_roi18,0.18,"(0.4, 0.6, 0.8, 1.0, 1.25, 1.6, 2.0)",,False,0,0.7295,0.110,
+phase3,V3_roi25,0.25,"(0.4, 0.6, 0.8, 1.0, 1.25, 1.6, 2.0)",,False,0,0.6660,0.130,
+phase3,V4_multi_template,0.18,"(0.4, 0.6, 0.8, 1.0, 1.25, 1.6, 2.0)",,False,3,0.8507,0.370,
+phase3,V14_hp_multi,0.18,"(0.4, 0.6, 0.8, 1.0, 1.25, 1.6, 2.0)",3.0,False,3,0.8370,0.430,
+phase3,V124_hp_dt_multi,0.18,"(0.4, 0.6, 0.8, 1.0, 1.25, 1.6, 2.0)",3.0,True,3,0.6236,0.450,
+phase3,V5_master_smallscales,0.18,"(0.18, 0.22, 0.3, 0.4, 0.6, 0.8, 1.0)",,False,0,0.7984,0.210,
+phase3,V6_smallscales_multi,0.18,"(0.18, 0.22, 0.3, 0.4, 0.6, 0.8, 1.0)",,False,3,0.7766,0.610,
+phase3,V7_smallscales_multi_hp,0.18,"(0.18, 0.22, 0.3, 0.4, 0.6, 0.8, 1.0)",3.0,False,3,0.7800,0.590,
+phase3,V8_realonly_narrow,0.18,"(0.85, 0.92, 1.0, 1.08, 1.15)",,False,2,0.8974,0.270,"SHIPPED — test macro F1=0.9291 AUC=0.9248 FP=0 FN=7"
+phase3,V9_realonly_narrow_hp,0.18,"(0.85, 0.92, 1.0, 1.08, 1.15)",3.0,False,2,0.8974,0.270,"tied with V8 on val; not chosen (HP no benefit, simpler config preferred)"
+phase3,V10_narrow_multi,0.18,"(0.85, 0.92, 1.0, 1.08, 1.15)",,False,3,0.8974,0.270,"tied with V8 on val; master template at this scale band adds nothing"

@@ -1,0 +1,104 @@
+"""Best/worst showcase image for the gemini_detector."""
+from __future__ import annotations
+
+import argparse
+import csv
+from pathlib import Path
+
+import cv2
+import numpy as np
+
+from .config import CANNY_HI, CANNY_LO, DEBUG_DIR, ROI_FRAC
+
+
+TILE_W, TILE_H = 220, 150
+GAP = 8
+LABEL_H = 28
+PANEL_HEADER_H = 36
+PANEL_GAP = 14
+
+
+def get_roi_and_canny(path: str):
+    img = cv2.imread(path, cv2.IMREAD_COLOR)
+    if img is None:
+        blank = np.full((TILE_H, TILE_W, 3), 50, dtype=np.uint8)
+        return blank, blank
+    h, w = img.shape[:2]
+    rh, rw = max(1, int(h * ROI_FRAC)), max(1, int(w * ROI_FRAC))
+    roi = img[h - rh:, w - rw:]
+    edges = cv2.Canny(cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY), CANNY_LO, CANNY_HI)
+    edges_bgr = cv2.cvtColor(edges, cv2.COLOR_GRAY2BGR)
+    return cv2.resize(roi, (TILE_W, TILE_H)), cv2.resize(edges_bgr, (TILE_W, TILE_H))
+
+
+def build_panel(title, rows, threshold, n=6):
+    items = rows[:n]
+    cell_w = TILE_W * 2 + GAP
+    cell_h = TILE_H + LABEL_H
+    grid_w = n * cell_w + (n - 1) * GAP
+    panel = np.full((PANEL_HEADER_H + cell_h, grid_w, 3), 28, dtype=np.uint8)
+    cv2.putText(panel, title, (4, 22), cv2.FONT_HERSHEY_SIMPLEX, 0.65, (255, 255, 255), 1, cv2.LINE_AA)
+    cv2.putText(panel, f"threshold={threshold:.2f}", (grid_w - 220, 22),
+                cv2.FONT_HERSHEY_SIMPLEX, 0.55, (180, 220, 255), 1, cv2.LINE_AA)
+    for i, r in enumerate(items):
+        roi_img, edge_img = get_roi_and_canny(r["path"])
+        x0 = i * (cell_w + GAP); y0 = PANEL_HEADER_H
+        cell = np.concatenate([roi_img, np.full((TILE_H, GAP, 3), 60, np.uint8), edge_img], axis=1)
+        panel[y0:y0 + TILE_H, x0:x0 + cell_w] = cell
+        sc = float(r["score"]); lab = int(r["label"]); pred = int(r["prediction"])
+        cls = "POS" if lab == 1 else "NEG"
+        verdict = "[OK]" if pred == lab else "[MISS]"
+        cv2.putText(panel, f"{cls} pred={'POS' if pred else 'NEG'} {verdict}  score={sc:.3f}",
+                    (x0 + 4, y0 + TILE_H + 18),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.45, (200, 230, 255), 1, cv2.LINE_AA)
+        cv2.putText(panel, Path(r["path"]).name[:36],
+                    (x0 + 4, y0 + TILE_H + 26),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.32, (160, 160, 160), 1, cv2.LINE_AA)
+    return panel
+
+
+def stack(panels):
+    width = max(p.shape[1] for p in panels)
+    out = []
+    for p in panels:
+        if p.shape[1] < width:
+            p = np.concatenate([p, np.full((p.shape[0], width - p.shape[1], 3), 28, np.uint8)], axis=1)
+        out.append(p)
+        out.append(np.full((PANEL_GAP, width, 3), 18, np.uint8))
+    return np.concatenate(out[:-1], axis=0)
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--scores-csv", default=str(DEBUG_DIR / "phase4" / "test_scores.csv"))
+    ap.add_argument("--threshold", type=float, default=0.41)
+    ap.add_argument("--n", type=int, default=6)
+    ap.add_argument("--out", default=str(DEBUG_DIR / "showcase.jpg"))
+    args = ap.parse_args()
+
+    rows = list(csv.DictReader(open(args.scores_csv)))
+    pos = [r for r in rows if int(r["label"]) == 1]
+    neg = [r for r in rows if int(r["label"]) == 0]
+    best_pos = sorted([r for r in pos if int(r["prediction"]) == 1], key=lambda r: -float(r["score"]))
+    worst_pos = sorted(pos, key=lambda r: float(r["score"]))
+    best_neg = sorted([r for r in neg if int(r["prediction"]) == 0], key=lambda r: float(r["score"]))
+    worst_neg = sorted(neg, key=lambda r: -float(r["score"]))
+
+    panels = [
+        build_panel("BEST gemini - highest-confidence true positives",
+                    best_pos, args.threshold, args.n),
+        build_panel("WORST gemini - lowest scores on label=1 (false negatives if pred=NEG)",
+                    worst_pos, args.threshold, args.n),
+        build_panel("BEST real - most confidently 'no watermark' (lowest scores on label=0)",
+                    best_neg, args.threshold, args.n),
+        build_panel("WORST real - highest scores on label=0 (closest to triggering / false positives)",
+                    worst_neg, args.threshold, args.n),
+    ]
+    out = stack(panels)
+    Path(args.out).parent.mkdir(parents=True, exist_ok=True)
+    cv2.imwrite(args.out, out)
+    print(f"wrote {args.out}  ({out.shape[1]}x{out.shape[0]})")
+
+
+if __name__ == "__main__":
+    main()
