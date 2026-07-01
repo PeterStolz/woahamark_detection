@@ -33,6 +33,13 @@ YOLO_MODEL = None
 YOLO_DEVICE = "cuda" if torch.cuda.is_available() else ("mps" if torch.backends.mps.is_available() else "cpu")
 
 YOLO_CLASSES = ['dalle', 'gemini', 'grok', 'minimax_hailuo', 'text_tpdne']
+# v3 (exp13): second detector adding sora + openai_logo, trained on real
+# watermark crops pseudo-labeled from catalog sora frames + composites.
+# Only its sora/openai detections are used, and only at high confidence —
+# on the val split its 5-class heads are weaker than v1's.
+YOLO_V3 = None
+YOLO_V3_CLASSES = ['dalle', 'gemini', 'grok', 'minimax_hailuo', 'text_tpdne', 'sora', 'openai_logo']
+SORA_CONF = 0.50
 
 TEMPLATE_LABEL_MAP = {
     "dalle_watermark": "dalle",
@@ -204,7 +211,11 @@ def load_yolo():
     _patch_nms_if_needed()
     yolo_path = Path(__file__).parent / "yolo_watermark.pt"
     YOLO_MODEL = YOLO(str(yolo_path))
-    print(f"  YOLO loaded: {yolo_path}", flush=True)
+    global YOLO_V3
+    v3_path = Path(__file__).parent / "yolo_watermark_v3.pt"
+    if v3_path.exists():
+        YOLO_V3 = YOLO(str(v3_path))
+    print(f"  YOLO loaded: {yolo_path} (+v3: {YOLO_V3 is not None})", flush=True)
 
 def yolo_detect(image_path):
     """Run YOLO, return (label, confidence, bbox) or None."""
@@ -215,6 +226,22 @@ def yolo_detect(image_path):
     # Take highest confidence detection
     best_idx = int(boxes.conf.argmax())
     cls = YOLO_CLASSES[int(boxes.cls[best_idx])]
+    conf = float(boxes.conf[best_idx])
+    x1, y1, x2, y2 = boxes.xyxy[best_idx].tolist()
+    return {"label": cls, "confidence": conf, "bbox": [int(x1), int(y1), int(x2), int(y2)]}
+
+def yolo_detect_sora(image_path):
+    """v3 detector, but only trusted for confident sora/openai_logo hits."""
+    if YOLO_V3 is None:
+        return None
+    results = YOLO_V3.predict(image_path, verbose=False, device=YOLO_DEVICE, imgsz=1280, conf=SORA_CONF)
+    boxes = results[0].boxes
+    if len(boxes) == 0:
+        return None
+    best_idx = int(boxes.conf.argmax())
+    cls = YOLO_V3_CLASSES[int(boxes.cls[best_idx])]
+    if cls not in ("sora", "openai_logo"):
+        return None
     conf = float(boxes.conf[best_idx])
     x1, y1, x2, y2 = boxes.xyxy[best_idx].tolist()
     return {"label": cls, "confidence": conf, "bbox": [int(x1), int(y1), int(x2), int(y2)]}
@@ -400,6 +427,15 @@ def detect(image_path: str) -> dict:
         if pred != "clean" and not yolo_backed and not passes_verification(image_path, pred):
             pred = "clean"
             confidence = 1.0 - confidence
+
+        # exp13: sora/OpenAI watermarks (tick rows, flower) are unknown to v1
+        # and the GBT; accept a confident v3 detection when nothing else fired.
+        if pred == "clean" and not yolo_backed:
+            sora_result = yolo_detect_sora(image_path)
+            if sora_result:
+                pred = sora_result["label"]
+                confidence = sora_result["confidence"]
+                yolo_result = sora_result
 
         binary = "clean" if pred == "clean" else "watermarked"
         result = {"binary": binary, "label": pred, "confidence": confidence}
