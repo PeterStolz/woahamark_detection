@@ -334,6 +334,30 @@ def passes_verification(image_path, label):
     return verify_score(img, label) >= tau
 
 
+META_BADGE = None   # Meta "IMAGINED WITH AI" circular badge (exp17)
+
+def load_meta_badge():
+    global META_BADGE
+    p = Path(__file__).parent / "meta_badge.png"
+    if p.exists():
+        META_BADGE = cv2.imread(str(p), cv2.IMREAD_GRAYSCALE)
+
+def meta_badge_score(img_bgr):
+    """Whole-frame NCC for Meta's 'IMAGINED WITH AI' badge (MovieGen frames).
+    Big, high-contrast and position-variable — whole-frame gray NCC separates
+    cleanly (moviegen median 0.86 vs val/wild-clean max 0.62)."""
+    if META_BADGE is None: return 0.0
+    h, w = img_bgr.shape[:2]
+    g = cv2.cvtColor(cv2.resize(img_bgr, (768, max(8, int(h * 768.0 / w)))), cv2.COLOR_BGR2GRAY)
+    best = 0.0
+    for ts in (55, 85, 130):
+        if ts >= g.shape[0] or ts >= g.shape[1]: continue
+        t = cv2.resize(META_BADGE, (ts, ts))
+        try: best = max(best, float(cv2.matchTemplate(g, t, cv2.TM_CCOEFF_NORMED).max()))
+        except cv2.error: pass
+    return best
+
+
 # ── Setup & Detect ──
 
 def setup(train_set: list[dict], templates: dict[str, str]):
@@ -355,7 +379,25 @@ def setup(train_set: list[dict], templates: dict[str, str]):
         if dm is not None:
             DALLE_MASTER = dm[:, :, :3] if dm.ndim == 3 and dm.shape[2] == 4 else dm
     extract_real_templates(train_set)
+    load_meta_badge()
     print("  real templates:", {k: len(v) for k, v in REAL_TEMPLATES.items()}, flush=True)
+
+    # Setup cache: features + trained GBTs are deterministic for a given
+    # train set (seed 42), so persist them. Cuts setup ~460s -> ~5s on
+    # repeat runs. Bump _FEATURE_VERSION whenever feature extraction changes.
+    _FEATURE_VERSION = "exp17-v1"
+    import pickle, hashlib as _hl
+    key = _hl.sha256((_FEATURE_VERSION + "|" + "|".join(
+        sorted(s["path"] + ":" + s["label"] for s in train_set))).encode()).hexdigest()[:16]
+    cache_path = Path(__file__).parent / f"setup_cache_{key}.pkl"
+    if cache_path.exists():
+        try:
+            with open(cache_path, "rb") as f:
+                BINARY_MODEL, MODEL = pickle.load(f)
+            print(f"  setup cache hit ({cache_path.name}) in {_t.time()-t0:.1f}s", flush=True)
+            return
+        except Exception:
+            pass
 
     # Train GBT fallback (for when YOLO doesn't detect)
     X, y = [], []
@@ -381,6 +423,11 @@ def setup(train_set: list[dict], templates: dict[str, str]):
     BINARY_MODEL.fit(X_arr,y_bin,sample_weight=bw)
     MODEL=GradientBoostingClassifier(n_estimators=500,max_depth=6,learning_rate=0.08,random_state=42,subsample=0.8,min_samples_leaf=3)
     MODEL.fit(X_arr,y,sample_weight=sw)
+    try:
+        with open(cache_path, "wb") as f:
+            pickle.dump((BINARY_MODEL, MODEL), f)
+    except Exception:
+        pass
     print(f"  setup complete in {_t.time()-t0:.1f}s", flush=True)
 
 
@@ -480,6 +527,15 @@ def detect(image_path: str) -> dict:
                             x1, y1, x2, y2 = (v/2 for v in b3.xyxy[bi].tolist())
                             yolo_result = {"label": pred, "confidence": confidence,
                                            "bbox": [int(x1), int(y1), int(x2), int(y2)]}
+
+            # exp17: Meta MovieGen "IMAGINED WITH AI" badge — none of the
+            # trained classes cover it (only 15% incidentally flagged).
+            # tau 0.65 clears the val/wild-clean maximum (0.61) with margin.
+            if pred == "clean":
+                mb = meta_badge_score(img)
+                if mb >= 0.65:
+                    pred = "meta_ai"
+                    confidence = mb
 
         binary = "clean" if pred == "clean" else "watermarked"
         result = {"binary": binary, "label": pred, "confidence": confidence}
