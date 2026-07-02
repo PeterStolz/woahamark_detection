@@ -449,6 +449,38 @@ def detect(image_path: str) -> dict:
                 pred = "gemini"
                 confidence = 0.65
 
+            # exp16: downscaled content (re-posts, thumbnails) shrinks the
+            # watermark below YOLO's effective size — recall drops 0.97->0.73
+            # on half-res val positives. A 2x-upscale retry on small images
+            # recovers most of that with 0 measured FPs.
+            elif max(img.shape[:2]) < 900:
+                up = cv2.resize(img, (img.shape[1]*2, img.shape[0]*2), interpolation=cv2.INTER_CUBIC)
+                r = YOLO_MODEL.predict(up, verbose=False, device=YOLO_DEVICE, imgsz=1280, conf=0.3)
+                boxes = r[0].boxes
+                if len(boxes):
+                    bi = int(boxes.conf.argmax())
+                    pred = YOLO_CLASSES[int(boxes.cls[bi])]
+                    confidence = float(boxes.conf[bi])
+                    x1, y1, x2, y2 = (v/2 for v in boxes.xyxy[bi].tolist())
+                    yolo_result = {"label": pred, "confidence": confidence,
+                                   "bbox": [int(x1), int(y1), int(x2), int(y2)]}
+                elif YOLO_V3 is not None:
+                    r3 = YOLO_V3.predict(up, verbose=False, device=YOLO_DEVICE, imgsz=1280, conf=SORA_CONF)
+                    b3 = r3[0].boxes
+                    if len(b3):
+                        bi = int(b3.conf.argmax())
+                        cls = YOLO_V3_CLASSES[int(b3.cls[bi])]
+                        conf3 = float(b3.conf[bi])
+                        # sora/openai at the usual bar; on this small-image
+                        # retry path v3's other heads are also safe at >=0.60
+                        # (0 FPs on small val cleans, 13/14 correct class)
+                        if cls in ("sora", "openai_logo") or conf3 >= 0.60:
+                            pred = cls
+                            confidence = conf3
+                            x1, y1, x2, y2 = (v/2 for v in b3.xyxy[bi].tolist())
+                            yolo_result = {"label": pred, "confidence": confidence,
+                                           "bbox": [int(x1), int(y1), int(x2), int(y2)]}
+
         binary = "clean" if pred == "clean" else "watermarked"
         result = {"binary": binary, "label": pred, "confidence": confidence}
         if yolo_result:
