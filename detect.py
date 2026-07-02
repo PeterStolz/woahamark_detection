@@ -437,6 +437,18 @@ def detect(image_path: str) -> dict:
                 confidence = sora_result["confidence"]
                 yolo_result = sora_result
 
+        # exp14: gemini-sparkle rescue. The sparkle is too small/faint for YOLO
+        # and the GBT on some images, but a strong narrow-scale NCC hit in the
+        # bottom-right ROI is specific enough on its own at this threshold
+        # (0 hits across all clean val images).
+        if pred == "clean" and not yolo_backed:
+            img = cv2.imread(image_path)
+            if img is None:
+                img = cv2.cvtColor(np.array(Image.open(image_path).convert("RGB")), cv2.COLOR_RGB2BGR)
+            if verify_score(img, "gemini") >= 0.65:
+                pred = "gemini"
+                confidence = 0.65
+
         binary = "clean" if pred == "clean" else "watermarked"
         result = {"binary": binary, "label": pred, "confidence": confidence}
         if yolo_result:
