@@ -471,6 +471,19 @@ def detect(image_path: str) -> dict:
         # Verification gate (exp12): non-clean predictions without YOLO support
         # must show localized template evidence, else revert to clean.
         yolo_backed = yolo_result is not None and yolo_result["confidence"] > 0.3
+
+        # exp19: v1 has no sora class, so OpenAI tick-row marks come out as the
+        # nearest v1 class (grok/hailuo). When the sora specialist confidently
+        # sees sora/openai on such an image, trust it: 26/31 sora_fresh
+        # mislabels fixed, 0 val changes, 0 rewrites on any other wild
+        # partition (measured on wild-v2, 1140 imgs).
+        if pred in ("grok", "minimax_hailuo"):
+            sora_fix = yolo_detect_sora(image_path)
+            if sora_fix:
+                pred = sora_fix["label"]
+                confidence = sora_fix["confidence"]
+                yolo_result = sora_fix
+                yolo_backed = True
         if pred != "clean" and not yolo_backed and not passes_verification(image_path, pred):
             pred = "clean"
             confidence = 1.0 - confidence
