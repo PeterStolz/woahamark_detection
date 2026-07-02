@@ -44,7 +44,8 @@ IMAGES_DIR = Path("images")
 TEMPLATES_DIR = IMAGES_DIR / "watermarks"
 
 # Time budget in seconds (wall clock for the full eval run)
-TIME_BUDGET_SECONDS = 120  # 2 minutes
+TIME_BUDGET_SECONDS = 240  # 4 minutes (bumped from 2 by Peter, 2026-07-02 —
+# shared box under external load pushed runs to the 120s cliff)
 
 # Random seed for reproducible splits
 SPLIT_SEED = 42
