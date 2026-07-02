@@ -1,0 +1,7 @@
+experiment	tag	macro_f1	binary_f1	multi_acc	time_s	notes
+0	baseline-linux-cuda	0.9666	0.9638	0.9588	88.2	exp11 pipeline reproduced on RTX5090; nms cpu shim
+12	verify-gate	0.9764	0.9740	0.9738	80.6	NCC verification gate for no-YOLO positives (grok@.30 hailuo@.22 gem@.45 dalle@.90); real crops auto-extracted via YOLO at setup; wild FP 39.6->4.8 measured; wild sora recall 98->37 (grok-mislabels now gated; exp13 to fix via sora class)
+13	dual-yolo-sora	0.9764	0.9740	0.9738	80.5	v3 YOLO (real sora crops pseudo-labeled from catalog) fused at conf>=0.5 for sora/openai only; wild sora recall 37->65, wild FP 4.8->5.0; val untouched
+14	gemini-ncc-rescue	0.9809	0.9778	0.9775	83.3	clean+noyolo & v_gemini>=0.65 -> gemini; +1 gemini TP, no val FP
+15	sora-v32-weights	0.9809	0.9778	0.9775	82.7	weights-only: wild sora dets 34->40/60 at conf.5; val unchanged
+16	upscale-retry	0.9809	0.9778	0.9775	83.6	half-res recall 0.728->~0.89, 0 new FPs; val unchanged

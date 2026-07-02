@@ -1,0 +1,541 @@
+path	partition	weak_label	pred_binary	pred_label	confidence	bbox
+/truenas-big/images/36/47/36475b4564eaa687833b0e730375cd852b901a6b68bbf4ea8ea8e0999a2ccce3.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.7757359147071838	[1664, 961, 1918, 1069]
+/truenas-big/images/61/29/612919c05bb902c3ce451b6ccd09effed3050698add898a3160c4d78d30f5050.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9999988832000519	
+/truenas-big/images/2a/fd/2afd4221cac829ee2b0c04dcc099bdeba0bf86665ec7490dc0a90b54588c824c.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9999992708246251	
+/truenas-big/images/66/35/66351d7803b4e881aa004d674edf98040840809ba5b64b973ecd833fca2e1a5d.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9999997570988032	[1777, 982, 1919, 1061]
+/truenas-big/images/62/08/62089d5f29af6d3b5ce03a97b40689b7a6731c595ba6ea306dfae3dc092ac3c5.JPEG	sora	watermarked_sora_or_openai	watermarked	minimax_hailuo	0.7420608401298523	[1798, 980, 1919, 1057]
+/truenas-big/images/c1/9c/c19c36bb828e0ddda5cb647323e9671c094afc9c689a033f71e45eb6acb0efb9.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9999999840688054	
+/truenas-big/images/77/04/770489fd61e8421f121c5bf5a2df9a42c08fe18598557440af99c1a4153e4a84.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9998831236297074	
+/truenas-big/images/73/ef/73efa761eb34cd788c4b1bbac098be4ccba4d326d6de9eccdcd57d9b7e7fa8a9.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9999995428040301	
+/truenas-big/images/6a/89/6a898536b6b620e0634052321b71e9ed3753217f8f7a04dca36b0240215899ec.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.999826560044416	
+/truenas-big/images/e3/bf/e3bf0ef102183d6d7ad916da985330a7d707c48bdf5051fa586d49347fe2606e.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9999568923537403	[1765, 976, 1919, 1060]
+/truenas-big/images/ea/ae/eaaee8dcc03fa54ef74c92288c5cef233964b25e7b0adb57e80107de6711366a.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.959334724206074	
+/truenas-big/images/22/48/224819d56a29d7d3bf377e775898489ccced773abb8bddba7b7b42e3bc86ad63.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9995471775489172	
+/truenas-big/images/6f/b7/6fb71c6c0b2e015e3b96933c6a82bf0f9e0d8f2e72b1ef57cb30b14a82b2ea63.JPEG	sora	watermarked_sora_or_openai	watermarked	minimax_hailuo	0.5316696166992188	[1182, 654, 1279, 704]
+/truenas-big/images/01/ca/01ca99a209b8bda6cf4298e8b03c01ba0004be8a595f0cc25e16dd22840ed371.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9918211563598065	
+/truenas-big/images/c9/ef/c9efca6191b3861637bff15a9c562ef01aca279a1373798b9e9d71bebdc5d3fd.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.32064300775527954	[1635, 963, 1911, 1065]
+/truenas-big/images/08/04/0804652f67dd4f3cdd49e74a829e9455d0871417ae2c049ee6204af42e0a7c8d.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9999541416524297	
+/truenas-big/images/c3/fa/c3fa5318449cb63ed472c547ea1c2d071043d2881c6f5515888ba4febe6cb7e5.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9999995966252275	[793, 429, 853, 472]
+/truenas-big/images/a2/e7/a2e7fe0bd17625498e60afd82303fe773e0699f7d2dbbb7d16b5efbb78abcc7d.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9911533849035359	[1181, 653, 1279, 706]
+/truenas-big/images/60/26/6026aa82be4684f8e01a7342f1055f3f5ebbab4bfd56aac1a9b651062744166a.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9997611459187831	[1194, 653, 1280, 709]
+/truenas-big/images/4a/02/4a02f8d3ba213f4611f2d24c070a85b0103031d6775e76665947ce8a9f73d8fe.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9999798148906242	
+/truenas-big/images/11/dd/11ddda20a0cb94d615b8f647b55c2c9eade67a2dc41adb5639fc08b24b8ad7d0.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9999902904604733	
+/truenas-big/images/f5/36/f53612b2191d20d760905192ce9c6faa7ab95f599d233397a530bacf4419ca43.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.009995863093518123	
+/truenas-big/images/86/75/8675abd4b8f70149c388affa5bd15f0be45c8694a3200838932110d49c03fb3f.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9998266230168038	
+/truenas-big/images/7b/1a/7b1a58602c42c1800b00e1d2af5e3bd623fc15dc9eff6b99eea55995cd29c4d1.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9999907653642042	
+/truenas-big/images/8b/24/8b24a003a26a20484064a39064b3bf8e5ff060e37b92052ccd50396be8f45cd3.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9999998447842325	
+/truenas-big/images/44/1f/441ffb7259b9d5e79e2e12e4ceb3494462f469a5593bbb40b1b4df0632176840.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9999825606690917	[1756, 980, 1919, 1059]
+/truenas-big/images/2d/90/2d90420fc8a27cc856ce0b8cbfaf2ad0e78513def0f45300ae0a087567577d68.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.6391414999961853	[796, 456, 895, 503]
+/truenas-big/images/0f/53/0f53606babf532298819249625cd39b04e7a1e2ed07a18e10a6fcd83fcea4013.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9999999698113551	[0, 958, 162, 1068]
+/truenas-big/images/89/09/89090d8d14c51dafd50f202e372ec6aad2e6d806028c1717f668af9ce3acd208.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.32523113489151	[0, 965, 276, 1065]
+/truenas-big/images/cb/d2/cbd22a579757d56085bb2f7694e846f7b8dc93959411652c34ef22f05e9f3bf4.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9999999559976133	
+/truenas-big/images/9c/54/9c548ba9ff9bc634aac6cdc44b3d90fe0ed43c8911c1b901f6bac150eb47dec3.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.999991236671038	[1745, 969, 1919, 1041]
+/truenas-big/images/f5/4f/f54fa0524fc6a7d2c2a821d22a094bc126c8c9f6c1dbb8e0cbfb580ea8a27e40.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9999999741764769	
+/truenas-big/images/c1/6f/c16fd4f9b1e124c2a3c35d45d5df1b86b8661552c061363f02644443b9a6595c.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9884893545464856	
+/truenas-big/images/0e/aa/0eaade1c3c0402f88fa9a3214013e11618bbbff0b037c43ed3bba7bb7759fea9.JPEG	sora	watermarked_sora_or_openai	watermarked	minimax_hailuo	0.5444735884666443	[1762, 974, 1920, 1056]
+/truenas-big/images/ce/5e/ce5e8977edc9ca6a6fcbb0f4fed0daa059a64f2b6001d941de2e5595ff0c7f18.JPEG	sora	watermarked_sora_or_openai	watermarked	minimax_hailuo	0.5154272317886353	[1185, 656, 1279, 706]
+/truenas-big/images/a8/ea/a8eafb0c2e1749b543fced1de64c2a6c8f3b2816ea738dc0db382e083348e856.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.6565103530883789	[1685, 957, 1920, 1063]
+/truenas-big/images/c4/20/c420476fd5e548e47184866dd1583ce24d5bab2719d38db185217945b76cf8e3.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.7350705862045288	[1672, 945, 1919, 1060]
+/truenas-big/images/4a/d3/4ad39e7dd4187522f957946b12bb44deccf4ef83f811bf1fe5fa6fb31bb8bf5f.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9993522946854466	
+/truenas-big/images/5d/e6/5de6fd4e9d2e1e3c9fe6dc852ad205159118fc6768a2c840a2c4625af22c6fe9.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.4369582235813141	[794, 456, 895, 503]
+/truenas-big/images/f0/34/f0344fd98a986323d1bb9e81c0f020dc74991e304bfb6a944e283c80041630c4.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.999998635222013	
+/truenas-big/images/9c/7c/9c7c03a76c8bf1fb1a29143fa667626e794ced588e108c945f04b18916a893df.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9999860507041848	
+/truenas-big/images/4c/00/4c0047bf2bfb788de631006669587b9da1486c1fa86aaed5691a3821c4878508.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.40770527720451355	[782, 429, 854, 471]
+/truenas-big/images/4b/da/4bdaa64b15ce24ad2ecad6b95c6b53036663cff86616875017a3d3717c75842b.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9999863344560623	
+/truenas-big/images/3e/56/3e56f57aa1de46ba209139b8dbccf4e9af691183bc83b6a2bc1cef4ccc769d29.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.921840420559748	[773, 424, 853, 471]
+/truenas-big/images/c7/4f/c74f3b7256f37d8f008c01f93dbd6df6aece894612052edfca92de816a34e27d.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9972287116696643	[1162, 643, 1280, 708]
+/truenas-big/images/4f/03/4f03fe595a08c7fd0aabb67d6a83e29a82ab21ce68f60f1e8b50959681401565.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.4013429284095764	[0, 964, 273, 1065]
+/truenas-big/images/86/ab/86ab084d52f8c791537400e0cef36dd42771c05fa2bd4e1eba13e632f5b1048a.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9999999949205947	
+/truenas-big/images/4e/7f/4e7f5164e4638a248deac0a69dcffcfee097870aa03249494f017bc1acd48e0a.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.5689877477877975	[1767, 984, 1919, 1060]
+/truenas-big/images/75/65/75652558352994019819129cf2b8fa9f99c5e758897a9cd1eb692b406df5761c.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.8980946346747559	
+/truenas-big/images/72/34/7234ed4cd07b4536cfef31464ecb9353da1112703049642dc908c0994af0f974.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9999870172660215	[1758, 979, 1919, 1060]
+/truenas-big/images/57/e1/57e12320c9670124e685407566c7c08aae8f334262bce45f56af31ae15e5b12a.JPEG	sora	watermarked_sora_or_openai	watermarked	minimax_hailuo	0.34595388174057007	[826, 470, 895, 501]
+/truenas-big/images/63/b4/63b49ade08fe5a0e840c1eb98503e6c78bc12c9f453aa66a408032a2838486ea.JPEG	sora	watermarked_sora_or_openai	clean	clean	0.9999236729347766	
+/truenas-big/images/bd/f9/bdf9dcd8b55740cbf2c9a15c19bf5ed96cfc792f236f721c01616e15dcc478af.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9920524698934157	
+/truenas-big/images/51/d6/51d6f541103285fe71547bfce1f77fab012cd12a269fa4160f1b5b4789b0a2b6.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9999998885904771	
+/truenas-big/images/07/93/079300baa6d191d7e6131a277e06c3477e40571f5a35c22ea3c93d32023d4577.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9999999401617681	
+/truenas-big/images/d3/c8/d3c8a3dd112d3f34bce8648ec10d135fb54e6108694f4ae611ec7d13e0daea20.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9999369806800764	
+/truenas-big/images/44/e6/44e6b168e97258e0703c3400df1584f61a66e4ef003ac94ad91656e9dc1abdaa.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.7535620927810669	[1711, 967, 1919, 1063]
+/truenas-big/images/46/a1/46a16408c7cdc3ca6903bfc0099493dec1c9ec224ac655de52d3dd711c9f68a4.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9999994635644986	
+/truenas-big/images/d6/0c/d60cc475fb77d9680f0e1afd5a415407b3e323abe482762f50341f643bea52db.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9999973599090625	
+/truenas-big/images/fe/da/feda7e949a64f246405dfd49dfe8884d9cc8c9d589b8ebe9b3b077ead52779ad.JPEG	sora	watermarked_sora_or_openai	watermarked	grok	0.9999997490111171	[1182, 656, 1279, 706]
+/truenas-big/images/c7/ea/c7eae02f235ff42b0c3b94be0b213f2c6a6e449d7cb897b11aa55fc3ef68965c.JPEG	nano_150k	clean	watermarked	grok	0.23745936155319214	[1197, 744, 1279, 814]
+/truenas-big/images/50/da/50dad27e0f3e146518284a3dee923fe6e91334cd7a17c62d56ab4fc6f67c4f57.JPEG	nano_150k	clean	watermarked	gemini	0.41294352903328785	
+/truenas-big/images/f9/67/f967c17ff108133702378f407c7b97c144df382a8a48fb58ac26b7c7fefc64f7.JPEG	nano_150k	clean	clean	clean	0.9999844028960974	
+/truenas-big/images/fb/e9/fbe98b34f50fa893605f64bbc41ec3017aedeaa2cdbf19b85ba964f8bf96df05.JPEG	nano_150k	clean	clean	clean	0.9989686845657205	
+/truenas-big/images/34/1f/341fedb60330ace2d6b1db53634c9290ae7fb0563449737edfd3163e71d3ea63.JPEG	nano_150k	clean	clean	clean	0.9993442532088164	
+/truenas-big/images/4f/ad/4fadd0e8b6acffba32ddb1066a2fb5ab164b50637e6a76cbb386590dade95e5d.JPEG	nano_150k	clean	watermarked	grok	0.9998884000305935	
+/truenas-big/images/90/9a/909a0721f2d34e3750f519b0e84341089bdd5e4a74009d874f997106ef0d6c18.JPEG	nano_150k	clean	watermarked	grok	0.9999799336028747	
+/truenas-big/images/ce/b7/ceb78857f9d59354a56d29c14774b81073e18c6569c47411ca207f4ed4911c7a.JPEG	nano_150k	clean	watermarked	grok	0.9999943910647638	
+/truenas-big/images/1a/42/1a4258b8fa0f96b8e5e7490f24d374d743c075c7cbf0ab81c7f0bedbf025c0bf.JPEG	nano_150k	clean	clean	clean	0.999998191003413	
+/truenas-big/images/92/8f/928fd24329e557946b1d9679f5f54fb51d0e82faa29acd79d3c68e5d184b279f.JPEG	nano_150k	clean	watermarked	gemini	0.5607022794923623	
+/truenas-big/images/99/10/99103ce7337e42e11d9910c0e8355fe7a912aef7c6238fc741eb4d1f267a5968.JPEG	nano_150k	clean	clean	clean	0.5093615032787258	
+/truenas-big/images/ae/9f/ae9fd3a2c16a0debd6b4f0e4c9af2d017e4e0948f7650821eca3748b12f976d6.JPEG	nano_150k	clean	watermarked	grok	0.9999221419817285	
+/truenas-big/images/7f/e4/7fe48b682da73ecbae641399b7246c30dacbc2b68b00ff7ff07ef25ae9eacb8d.JPEG	nano_150k	clean	clean	clean	0.999999863893776	
+/truenas-big/images/a8/99/a89957dbb034c34080db2b69104c0c541002e4aab70fde1acbf53b5a9f88f568.JPEG	nano_150k	clean	watermarked	grok	0.9999953842809168	
+/truenas-big/images/f4/ec/f4ecd3c3739e7af42d64fa6d8a422301bbabefe0cb4f121818c626b63e645bb3.JPEG	nano_150k	clean	watermarked	grok	0.9971683436531377	
+/truenas-big/images/02/03/020374fb1e8d0e5fcda7d47a14fdf91ffdae56775e0a19d36ca40c65172bd3e4.JPEG	nano_150k	clean	clean	clean	0.5453941227403891	
+/truenas-big/images/cc/85/cc85434a06eb6eec3b7f81b3506ee1c38206232142831b18946b508514a63141.JPEG	nano_150k	clean	clean	clean	0.9999976040579068	
+/truenas-big/images/73/bc/73bcd453469c3fc3d6782edc9c1d28d97fbb14b6d1e79a6c7e886e143e1eb702.JPEG	nano_150k	clean	clean	clean	0.991948738133567	
+/truenas-big/images/74/cb/74cbb8a2fac64fd5d666de0aab5f955b9ac6261284c648f361a0fb30abef030d.JPEG	nano_150k	clean	watermarked	grok	0.9968478851250449	
+/truenas-big/images/e7/dc/e7dc8a30b8bc1876e0e8801e3b25b28ddbd0f0d16445497b08218785bea820e9.JPEG	nano_150k	clean	watermarked	grok	0.9999999988999251	
+/truenas-big/images/b0/b9/b0b9aa025c99353cf26bad94b2f5a91235ba65459de6adbe2fbd12542e1dda50.JPEG	nano_150k	clean	clean	clean	0.9998017775151812	
+/truenas-big/images/6d/11/6d115b1afb7fa70e9430e5c205cb0ae915e62390d44517b3f88f5cc98571c057.JPEG	nano_150k	clean	watermarked	grok	0.9997728735824714	
+/truenas-big/images/8f/dc/8fdc19fe3648357a22d91a5da2af952a9689a577e7868a03fb9899b8e11a7597.JPEG	nano_150k	clean	watermarked	grok	0.9990170969108059	[0, 763, 107, 840]
+/truenas-big/images/ff/ca/ffca92a8c5ddaacccdd1580a2cc7b896a75364558376b9b58a2102d296f0d0ab.JPEG	nano_150k	clean	clean	clean	0.9998892960348309	
+/truenas-big/images/04/6a/046acc57a44f82d9346f0dd8908fd57db70017f0f0465366aec48f5f84b23b52.JPEG	nano_150k	clean	clean	clean	0.9993515639581922	
+/truenas-big/images/15/ab/15ab0db2ebf8c5c2db6e07de47325cc854da2a9da0419f7c34cb62a71a5fa553.JPEG	nano_150k	clean	clean	clean	0.9999578907227268	
+/truenas-big/images/f6/b0/f6b0e26f9c0b8a6a15194e6608e866a00da68d0b0d73c5196a880ad06393db67.JPEG	nano_150k	clean	clean	clean	0.9992886965974844	
+/truenas-big/images/90/57/9057cc8ff7a86ad49777951f6d328b1e3f8f48c4f0254dbca5e5cc880e4223a4.JPEG	nano_150k	clean	clean	clean	0.9997517208110137	
+/truenas-big/images/38/b3/38b314bbf65998deda1d4e491de1c4b661e1493bf4b4cddce86be57440587f39.JPEG	nano_150k	clean	clean	clean	0.9999978745355932	[0, 598, 70, 637]
+/truenas-big/images/29/26/292652d4226aa196aa1128ecab746bc1e1e2f641f6f59cc4aa6383c6e27a5799.JPEG	nano_150k	clean	clean	clean	0.9999439179616773	
+/truenas-big/images/03/e8/03e825f5027ab63862b6a87f26db603d0fdcb4e4b0d4bcf474dc6dcdaa0d2651.JPEG	nano_150k	clean	clean	clean	0.9065579175042358	
+/truenas-big/images/51/dc/51dc462b293ce7f5eada13399a3269ff65fe02007db960153d411e1991f0c5a5.JPEG	nano_150k	clean	clean	clean	0.9995269938354785	
+/truenas-big/images/1b/28/1b289066b0a2a76ccea61e5e4168ccd2717eeddfbad1d030bdd5d0735b68ff88.JPEG	nano_150k	clean	watermarked	grok	0.05251768160861396	
+/truenas-big/images/4f/4c/4f4c0637aa821a7d56d534640cf1bf4e436f53a8b7b1c0687077b37456f3d52c.JPEG	nano_150k	clean	clean	clean	0.9682066238589054	
+/truenas-big/images/da/1d/da1db50eaaac072d33c0974529afd9192feb4d997399819f4b39d211d8ad086b.JPEG	nano_150k	clean	clean	clean	0.9999951260067865	
+/truenas-big/images/c4/cb/c4cbc8064b9d42cddf2cf48636b5673df9a949e58fd41d68e487298d6558459a.JPEG	nano_150k	clean	watermarked	grok	0.999998838207323	
+/truenas-big/images/b2/63/b263109b47d532b5d94b6600dbe2054983a4e350581d3b3d0ec567894b1d1638.JPEG	nano_150k	clean	clean	clean	0.9999982245917488	
+/truenas-big/images/7a/66/7a666e92ff0f9a13ca5b612c26e742cb65cde179ea6c4d267ece60fc259e9f32.JPEG	nano_150k	clean	clean	clean	0.9998649206610497	[706, 1232, 854, 1280]
+/truenas-big/images/78/01/7801ff9aaba50868f39ce09b8bba4b6ea94f5ca93fd11317d8efae88204b6dba.JPEG	nano_150k	clean	watermarked	grok	0.9999496381222052	[1003, 549, 1100, 608]
+/truenas-big/images/50/18/50181103286bf6cb2e52408a00276e4d8f5c430e06586ddd082ca1603db282a6.JPEG	nano_150k	clean	watermarked	grok	0.9999999659976333	
+/truenas-big/images/3f/24/3f246422f657813568d66653aee6c8a5f04a24fb031edf9952cd5b68ab20a323.JPEG	nano_150k	clean	clean	clean	0.9999999162045404	
+/truenas-big/images/17/46/174632d8350c26222ec2d7ca12058ac16e57980bf704fb37ef3a5c29cab6b8a9.JPEG	nano_150k	clean	clean	clean	0.9999961392209658	
+/truenas-big/images/b7/9b/b79bf1819c8646afa98abd1b620fd98489888cc5e5d16ef38a28f792ee916bc1.JPEG	nano_150k	clean	clean	clean	0.9999252591531912	
+/truenas-big/images/76/aa/76aab2bc730e7aebc116c8fa0ba5e7a0028fd07ebaeaaf5f4b45b28a8a5a17e5.JPEG	nano_150k	clean	watermarked	grok	0.9887932374243188	
+/truenas-big/images/4f/5d/4f5dcbcff841a6ea8db1b518e7273768b04aa8e1102b631e262e5cb9b1cb92bd.JPEG	nano_150k	clean	watermarked	grok	0.9999999045279586	
+/truenas-big/images/53/77/5377992dfeabf8fa37d01b2648458e3e30ecf3808050b459b2fa703faa900c1e.JPEG	nano_150k	clean	clean	clean	0.9999989034727179	
+/truenas-big/images/5c/53/5c53fdc7096a5ae8602fdd2fbeb4aaf34625cc90d8bc7cd1c81a3382402b9843.JPEG	nano_150k	clean	clean	clean	0.99999967684036	
+/truenas-big/images/7f/a2/7fa26fb8de075ac094d3ad1b4a9ea6ed13af44938fa5d2c77bc2736f60183bc2.JPEG	nano_150k	clean	watermarked	grok	0.9999919779252492	
+/truenas-big/images/67/32/67321dd44f8befa04cd446a32396d4f599df25e7ad9dea0c31d3f98c8a9825cb.JPEG	nano_150k	clean	clean	clean	0.9999976351848319	
+/truenas-big/images/66/3d/663d48834717f844b0dd4a641aebe440a6a6e82e3c67c49341601f04bb2a9bcf.JPEG	nano_150k	clean	watermarked	minimax_hailuo	0.5692689966478724	
+/truenas-big/images/9d/de/9dde3352030c817e28e881f37e99be98a8b4332d337c1de3feade3bbf91b6e8c.JPEG	nano_150k	clean	watermarked	grok	0.38499694215913494	
+/truenas-big/images/44/da/44da57d1012543f47a7ea2bf6a7490d17e1bb2d5a15953505326478194e2979e.JPEG	nano_150k	clean	clean	clean	0.9999999988163901	
+/truenas-big/images/0d/b7/0db7e6ebf8c81c099ee9ff9debda8007936083afebece428329783271fea2131.JPEG	nano_150k	clean	clean	clean	0.9999199156802651	
+/truenas-big/images/f7/92/f7920cde535d93e8f53591a6a5f474a0b7db6e45c96a0fb9eece0139ae9549b1.JPEG	nano_150k	clean	clean	clean	0.7409203592716811	
+/truenas-big/images/b2/cb/b2cb888e27c4011c8fab0f11059ef0bdc2bdb1e0786ae3290f7fd3205bbbd895.JPEG	nano_150k	clean	clean	clean	0.9987288072381194	
+/truenas-big/images/a2/cd/a2cd26f95419d6a9888d451baf562257d13df1bdfb21cfd7ea875b687f3ea10e.JPEG	nano_150k	clean	clean	clean	0.9995913134383374	
+/truenas-big/images/4b/57/4b57d9e086841302b3ee85cc9b3dc3ad84f502aecb1d035a999b737cf2c4a663.JPEG	nano_150k	clean	clean	clean	0.9999860893204562	
+/truenas-big/images/3c/58/3c58eed3bc556821fa12de01396503e1258ed9cc528ccd54a1b8e37b14d89aa1.JPEG	nano_150k	clean	clean	clean	0.9999493743571397	
+/truenas-big/images/2b/fc/2bfcf6f8b91dc0b513e23cc7e9661776ee6d24d5a308b5ca3904bce9ebf4edb1.JPEG	nano_150k	clean	clean	clean	0.9999992367836611	
+/truenas-big/images/a6/de/a6de2e701e60182c09f77b87939787bae5ae76599bbc0b0d01c45222cba02543.JPEG	nano_150k	clean	clean	clean	0.9954920391537133	
+/truenas-big/images/11/03/11032fe15ae0f2358ce15b7c7b298b946b21975e99ce4af37c5d01e4891e5199.PNG	pico_banana	clean	clean	clean	0.9897925836265495	
+/truenas-big/images/18/4b/184b5979647c30d0320221ec02f43f3e16c5671125ce12712716e17f5141af9f.PNG	pico_banana	clean	watermarked	grok	0.7089625041054441	
+/truenas-big/images/3b/ed/3bedbef21886cf8eab6c4b9005696ad7ece73bc9c5ae4f996fefcd4bca9792f1.PNG	pico_banana	clean	watermarked	gemini	0.01213887877982002	
+/truenas-big/images/79/56/7956cde240b92abfb2ced80cb6cb5ae43f16f496eed489bf127c55075dd93273.PNG	pico_banana	clean	clean	clean	0.9997819757561219	
+/truenas-big/images/29/36/2936b72019a1e8f10874c264c70a160a9e8af552fd16c8cb7cacc48c72816534.PNG	pico_banana	clean	clean	clean	0.9999987984896092	
+/truenas-big/images/35/72/3572d5f7f77473992ae37c9f43e3f134d01bf4e0447f37bcb48af175cc64fa87.PNG	pico_banana	clean	watermarked	grok	0.9999999143337412	
+/truenas-big/images/75/18/751887e09ebfecfcd19e7a4acc969aec0d281530b3550a1e70add842ee29d729.PNG	pico_banana	clean	clean	clean	0.9999998739572528	
+/truenas-big/images/25/3d/253dfcd8dca79cf6380f41a2c6d82154d5d2006be5771d95b102fab8a1bbce8e.PNG	pico_banana	clean	watermarked	grok	0.9999992537602531	[1052, 769, 1184, 850]
+/truenas-big/images/5c/86/5c8660efd3e246571dd355838f6c7ac843a0a725150b153ab8e36d3f47f7a713.PNG	pico_banana	clean	watermarked	grok	0.999999709818985	
+/truenas-big/images/f1/f3/f1f37cfc70168ab5bb227ba75314a7818ae36d3d9f349c27e1e1e01796e49fdb.PNG	pico_banana	clean	watermarked	grok	0.9863185033339495	
+/truenas-big/images/31/42/31428be0653868e551b647d4ce6d85472f975ac6b0f341101ee943cd0deb8d3f.PNG	pico_banana	clean	watermarked	grok	0.9998868136493572	
+/truenas-big/images/0b/fc/0bfc829640122dc43bf6385ea40aa606ee2efe07dcf25ec0c05deede8ed68cfd.PNG	pico_banana	clean	watermarked	grok	0.9643803903304412	
+/truenas-big/images/b8/4e/b84e5cd0874d7fd9f1c870a23eb68c172253aff7f5e9b797ef7e767e18d18556.PNG	pico_banana	clean	watermarked	grok	0.999973420086381	
+/truenas-big/images/58/f4/58f4f7f7a4becd0f91139476b2e1f0ec4b4bfb68807c43b9ee7f0c1a7cc70196.PNG	pico_banana	clean	watermarked	grok	0.9934346463222351	
+/truenas-big/images/f2/a6/f2a607d03a16097062dc34dd5e8e14a919e470afc12a81765dc5e7b2cb55b356.PNG	pico_banana	clean	clean	clean	0.9999996892841045	
+/truenas-big/images/77/1e/771eb5bf987248c3fad5914007e1566ea2905bce2e01bc90c19700606b4927c2.PNG	pico_banana	clean	watermarked	grok	0.9943104906093417	[0, 801, 106, 853]
+/truenas-big/images/c2/f0/c2f0f4bef6d3a8bd80919da31080838932b2fc03c6e69f3fcd779cffca5904e2.PNG	pico_banana	clean	clean	clean	0.9999999896832353	
+/truenas-big/images/f1/d3/f1d3f045c017456d98d9ee9c5f6b49a8010b6e669c6f83ad70027ec5549e9a7f.PNG	pico_banana	clean	watermarked	grok	0.9931532450948174	
+/truenas-big/images/0f/c0/0fc0d99a94eec9ce44e4c4634c0625402f446d8000b97f92f2ef6454be6f293e.PNG	pico_banana	clean	watermarked	grok	0.34349074959754944	[925, 830, 1152, 885]
+/truenas-big/images/e3/9c/e39c3850df3d89874d82e16c71d3fa8e43f63784ea6c5172dc67e107738bfe26.PNG	pico_banana	clean	watermarked	gemini	0.0166213381380022	
+/truenas-big/images/8e/38/8e38f55e0b294408f671a2534e360a1480d38ce514b82abfb1fe57e36db96fc5.PNG	pico_banana	clean	clean	clean	0.9999964800430359	
+/truenas-big/images/45/46/4546831110104833495be3c6d381b47336e222392cdde4465a286cfcdf5d69f1.PNG	pico_banana	clean	clean	clean	0.9999984507942778	
+/truenas-big/images/77/e2/77e20a1bcf105e6ec6c0e0e6646afa089f88cc79a3f8ac775603e30777364a48.PNG	pico_banana	clean	watermarked	grok	0.9985102716179761	
+/truenas-big/images/76/de/76deeb92e4a8ad01f34be5453ea6c733b169a0133d30629d04bb7560e230d7c2.PNG	pico_banana	clean	clean	clean	0.9999973968785484	
+/truenas-big/images/1a/ec/1aec46a6a84c0eab1d17266b16b962f4d9e7a5c1b74554803777d11a33b0636e.PNG	pico_banana	clean	clean	clean	0.9999999999206695	
+/truenas-big/images/b7/42/b7425e60133a767700f4faee90906ea5251796c239b9de6162a7dede70c6e64e.PNG	pico_banana	clean	clean	clean	0.9999996901892653	
+/truenas-big/images/88/e0/88e079ad69721e8dd85d6c17448f4261c1e56d78cfd1c9fc6556ea5621860e10.PNG	pico_banana	clean	clean	clean	0.9978892859421982	
+/truenas-big/images/16/5b/165bdcd4dd1a3c5247051fdcdb53d3f4fc9e0af06fe000011c2db414e482499c.PNG	pico_banana	clean	watermarked	grok	0.9988652796008904	
+/truenas-big/images/19/fa/19fa5006d18989fd9a3195b58b91fd2b38607b05821633b176f44a8488012691.PNG	pico_banana	clean	watermarked	grok	0.9645297859296779	
+/truenas-big/images/fa/78/fa788575e49b1a897d8912c59a04d955c54ebb465a0eb4eb3d28e09daed4e167.PNG	pico_banana	clean	clean	clean	0.9999883377491341	
+/truenas-big/images/be/81/be818f320c45d571d02f4a1e8ecccc31d6c211811ba7d3990279e8edf853f28c.PNG	pico_banana	clean	clean	clean	0.9822770276483016	
+/truenas-big/images/dc/1d/dc1d8fe35cf95b2432d09e206a9d39428f303136e48ae6ec10764014e22758b9.PNG	pico_banana	clean	watermarked	grok	0.9791181879399297	
+/truenas-big/images/4e/14/4e144e71ef5ffa25f5f74d5bce54c49b5eb8830f437af3c58389b9d7cdcda117.PNG	pico_banana	clean	watermarked	grok	0.9998761991779547	
+/truenas-big/images/98/75/98759249098dac6f5cd2c649a6f5e065b3c12db92f1e7991e3bd8b20ad389a7d.PNG	pico_banana	clean	clean	clean	0.9884656074771024	
+/truenas-big/images/9f/04/9f0482ee8131c5d44bf6ff676f75876b88ac4c17b99b0b7ebca84c6baf09a04b.PNG	pico_banana	clean	clean	clean	0.9999998387870392	
+/truenas-big/images/a4/c6/a4c6c44d0c79f64442196491c9b515ae4a1a1c26db0c484b2a023abe6531151b.PNG	pico_banana	clean	clean	clean	0.9996283018234162	
+/truenas-big/images/9a/c5/9ac518f4de7bd76dec9c117bab4a709f295127d0019bdbaf713f3d5af43ecd90.PNG	pico_banana	clean	clean	clean	0.9997510334471612	
+/truenas-big/images/c8/ae/c8ae5c2aba9ab27823aef51659e1c4dfb4420dd463e4f15af809d6521e0a6ce5.PNG	pico_banana	clean	clean	clean	0.9992085992864562	
+/truenas-big/images/e2/66/e266033f4e9fc2daf2ed94935cb1dff83f6b03a06fce8e29a9e2bc9cbc792420.PNG	pico_banana	clean	clean	clean	0.9999962646384232	
+/truenas-big/images/c5/d1/c5d15f02a67d42f80b3c9ca0c118730e8dd8b7df1cbc2dc822f55756c03deaf6.PNG	pico_banana	clean	watermarked	grok	0.5677248702892738	
+/truenas-big/images/e3/0a/e30a5f47edce6b78a4f78bbe0bf9bdbb762bf9ebeb8aa53642553a796c70c63f.JPEG	dalle3	clean	watermarked	grok	0.3076474964618683	[0, 970, 104, 1022]
+/truenas-big/images/16/b0/16b0772f95f68668b9810a88924158054f023273af60ca1f409fd3fd49ff3979.JPEG	dalle3	clean	watermarked	grok	0.05343552726023295	
+/truenas-big/images/e5/0f/e50f45d4f193984557ede56548039714d024954d65cf7a686f6fd3f12b35dde3.JPEG	dalle3	clean	clean	clean	0.9999999887708878	[939, 980, 1023, 1024]
+/truenas-big/images/05/3e/053e30bd1aa3477a09db5d38db99d44a1cd13caefd006109290a6ffe3f535083.JPEG	dalle3	clean	clean	clean	0.9999965996978315	
+/truenas-big/images/e4/d8/e4d8587ba56cf80a445b52943c3092b116498ea6fe0a3ae6c92850e4b7258b2b.JPEG	dalle3	clean	clean	clean	0.9998109924278039	
+/truenas-big/images/93/24/9324d25c78c9f7bf0a9c887d113cd1ab80887832fbe731cd8991a3c49078b184.JPEG	dalle3	clean	watermarked	gemini	0.507785371262153	
+/truenas-big/images/e3/0b/e30b84d7fa87622a9e47cc4c8b6de147665a92a13d22d59d06828aa09fae822e.JPEG	dalle3	clean	clean	clean	0.9999319902898188	
+/truenas-big/images/e2/c9/e2c95b235e041432af4bc26754632ecc6cddb0a1820a83a49871890ef4a2a738.JPEG	dalle3	clean	watermarked	grok	0.0068189395122476544	
+/truenas-big/images/e5/46/e546bcb14a1fad0238c4bbc62f718416565c19885fa63a50a6c3353623162242.JPEG	dalle3	clean	clean	clean	0.9999379783640594	
+/truenas-big/images/1a/0a/1a0a73223a38e83001b3f0652bb4ef75c2a19d39df98edc51d0e4b8b689fa65a.JPEG	dalle3	clean	clean	clean	0.9999997373934383	
+/truenas-big/images/e5/72/e57220c7a38c0b2cffcda420051dafff7632d1a09ca5e88038afe8d410345a4f.JPEG	dalle3	clean	clean	clean	0.9999885116192002	
+/truenas-big/images/96/5f/965fad8ff053d7dca42112d8366bab56ad05267bca5ce6953048f11c7a21fa66.JPEG	dalle3	clean	clean	clean	0.999999957770412	
+/truenas-big/images/e5/92/e592b078a2010dd3062efec0bc96eaeded5fb6bdf4cb2af038f0751782f12dd0.JPEG	dalle3	clean	clean	clean	0.9991303054068176	
+/truenas-big/images/e3/24/e324761491ba6b198d37534c1bf7813650e3ec04d0832aac34e5aabcdaa1e7b1.JPEG	dalle3	clean	clean	clean	0.9999941032380422	
+/truenas-big/images/e3/4e/e34e943b2035cebe318cfbf7c6c24dde58a1d3b584f8ce39574dfa3e65e036f9.JPEG	dalle3	clean	clean	clean	0.9998991693928811	
+/truenas-big/images/e3/88/e38858d2ed02c6cc1d3ecb3a2a425e37a6a6e1156e333288a36707673bd03ba4.JPEG	dalle3	clean	clean	clean	0.9999999956893248	
+/truenas-big/images/e5/92/e5921cefbeaa6164eb3592c99d309288069cb7a348deb4cc6e7d0434827ece78.JPEG	dalle3	clean	watermarked	dalle	0.2437078724513757	
+/truenas-big/images/55/70/557043628eeea89b4ed747735acd7fa87322e8e1fde9f463e8c9d18788fce4bb.JPEG	dalle3	clean	clean	clean	0.9983125740389769	
+/truenas-big/images/7e/34/7e340e0d19f5eb9a00b77653526ad04df2e9a7f999a22528f0da86e7524aa800.JPEG	dalle3	clean	clean	clean	0.9999999769253466	
+/truenas-big/images/e9/dd/e9ddcd5d9265f21f1aa9791a86501ba8edbd91b4ea3e72bfffb55fbf2fc23765.JPEG	dalle3	clean	clean	clean	0.9997259088193311	
+/truenas-big/images/d1/42/d142ed1d03393dde3bc36b1428415ef264f5b7d0810ce883440c7662b86e9b56.JPEG	dalle3	clean	watermarked	grok	0.01577639386670273	
+/truenas-big/images/9e/e1/9ee1c1172fd4036dba89191f620352687f9749329aaae1a4edab0a01a68161e0.JPEG	dalle3	clean	clean	clean	0.9999999852661525	
+/truenas-big/images/e3/ca/e3ca86be180dd3e29827021831c18261bddea88344decec0c9b0108ebd22492e.JPEG	dalle3	clean	clean	clean	0.9983234748613228	
+/truenas-big/images/b2/52/b252db3efc63be19575c2915730d90911ec1197107927cc50d965608f6e7bf19.JPEG	dalle3	clean	clean	clean	0.9999283281636545	
+/truenas-big/images/e5/d1/e5d1afd31fdcd22a9dabefd3e6b4dec80429fd5a49174be2d38781eda5cda1b1.JPEG	dalle3	clean	watermarked	gemini	0.999832634166578	
+/truenas-big/images/e3/96/e396984657279118a332e2e53e67c45af8d86d44613a1315d74b0d0f5b3fd005.JPEG	dalle3	clean	clean	clean	0.9943935048920285	
+/truenas-big/images/db/d9/dbd92ecedc644f37a99edd975a2631cfbcd45dc179f78bdea24f12ad146d5707.JPEG	dalle3	clean	clean	clean	0.9999424072539176	
+/truenas-big/images/84/80/8480c93b1b834106a9f265d3843b71e34e75817098f2e31db30860431da1fc21.JPEG	dalle3	clean	clean	clean	0.9999120114906167	
+/truenas-big/images/e4/1b/e41b4260ef0da8a238f3e7e429557537572e21b0bb068128a8cd1ae5965c0026.JPEG	dalle3	clean	clean	clean	0.9999384996038498	
+/truenas-big/images/e6/01/e6014fc246339cc49ac53bf96568e0824dfbb47f3c1139e815f8fdefbd2b4187.JPEG	dalle3	clean	clean	clean	0.9995373035708723	
+/truenas-big/images/16/ca/16ca9b5fcb1f8a36eeaefbb07ed64aa9a608b113bbcd3c119adbe1d0eddf8b43.JPEG	dalle3	clean	clean	clean	0.9991088989104001	
+/truenas-big/images/3a/54/3a54f7fe18ed120e6961a297a64e1e02da8979dd87229cc65d8cf55d5e8839f9.JPEG	dalle3	clean	clean	clean	0.9999999934199593	
+/truenas-big/images/e3/e0/e3e031b65a5db6965de8b59a44c0ea6bbc99b50d715b30bc78165c6bb19b47c8.JPEG	dalle3	clean	watermarked	grok	0.6986889453743708	
+/truenas-big/images/02/ca/02cacb6e6d02ef38f42759ad315696d056bc601051ed488c3ee2505f2c13c27c.JPEG	dalle3	clean	clean	clean	0.999608681671679	
+/truenas-big/images/e6/2d/e62d20c75db4202e8c05ed480fa76797abaa0eb253e6c173d5729e02080ff46d.JPEG	dalle3	clean	watermarked	gemini	0.999777185303286	
+/truenas-big/images/35/c0/35c0b249eb691a9ba9a51e5138bbad3cf72859ece38c6b250a35a73ec2c180f9.JPEG	dalle3	clean	clean	clean	0.9999997505988325	
+/truenas-big/images/e4/91/e491aa24339cb1dcf60530d6ca20486db8136f35c2fc4301887acbe9cfb88838.JPEG	dalle3	clean	clean	clean	0.9999846503277713	
+/truenas-big/images/1d/b0/1db02f3cd7e4dac007f10c92b421feed6ea52ea0b46a35ec21d07f2ee052ce85.JPEG	dalle3	clean	clean	clean	0.9999976946413089	
+/truenas-big/images/00/3a/003a4c362d756a740b7482d698b960f1498f0887010042ec189acc08d1f6bdb0.JPEG	dalle3	clean	clean	clean	0.9971040233282251	
+/truenas-big/images/f6/21/f6216706d484f06bf0a4c39fe9345b8307597e067b78b9513c5671e2cfd29d8c.JPEG	dalle3	clean	clean	clean	0.9999920716315582	[949, 970, 1024, 1023]
+/truenas-big/images/9f/50/9f502395dc02b35e231d86e37abacf83309083669bfaf983b0ec99c4ee5b2456.WEBP	gpt_4o	clean	clean	clean	0.9999119304231139	
+/truenas-big/images/c3/91/c39196e99560dcbc02788b2ae1a66553fbfa8c377c8e774b6b068eba96852554.WEBP	gpt_4o	clean	watermarked	grok	0.9999226989550201	
+/truenas-big/images/7f/19/7f1966d965d2fa1e26bb1398bbe544fb55b005bba4f89823e1f339fd36e934a1.WEBP	gpt_4o	clean	watermarked	grok	0.9999999842723679	
+/truenas-big/images/21/7e/217e09e889b6af56946742edd59f08d45ace419705bbd19878be83e11d90dfde.WEBP	gpt_4o	clean	watermarked	grok	0.9999995051112824	
+/truenas-big/images/65/af/65af61ec08a97ec077e591b5d2299c8ea07f8dac1a474df54111195a41a60dbd.WEBP	gpt_4o	clean	watermarked	grok	0.9999980243324054	[1177, 648, 1282, 706]
+/truenas-big/images/88/19/88193d3323e11faa74eaf8f32c01a46ec1489cd5126d1324f0e522aa33245c28.WEBP	gpt_4o	clean	watermarked	minimax_hailuo	0.30448925495147705	[1165, 645, 1282, 707]
+/truenas-big/images/1a/d3/1ad32fd838c5a4f45e39ac0693fa6dbc355ac49ab6e7a09c2f117cfba78944b8.WEBP	gpt_4o	clean	clean	clean	0.9999999581642425	
+/truenas-big/images/bf/ca/bfca61551156af32c3721cfa1d42232a07333a45db3ffc98ff20f51ca95fd018.WEBP	gpt_4o	clean	clean	clean	0.9871305812135447	
+/truenas-big/images/26/34/263401d02d43d557dd778a48e31a397ca04a331d9f7204060c6db94b9991f307.WEBP	gpt_4o	clean	watermarked	minimax_hailuo	0.5293256640434265	[1185, 646, 1281, 706]
+/truenas-big/images/6b/88/6b88c04635379a133843303302e3669709e0297a34cbec28f9bc441a0daa075e.WEBP	gpt_4o	clean	watermarked	grok	0.6724795038120833	[1176, 647, 1282, 707]
+/truenas-big/images/ea/95/ea95c889c552c601349fc185c8d15fd3ae78ffd44567de61ebe0da966a88976e.WEBP	gpt_4o	clean	watermarked	minimax_hailuo	0.41457095742225647	[1168, 641, 1278, 706]
+/truenas-big/images/7e/6c/7e6c746a4ded1e30870532d6811964a64bb0b46c8f11e903fb59cd9a0f1aeb62.WEBP	gpt_4o	clean	clean	clean	0.9999999902712949	
+/truenas-big/images/de/6c/de6c44f2651c6c310b852b0a6d96a5760ff4c424dc3e4b20b5dcfc5673813d0a.WEBP	gpt_4o	clean	watermarked	grok	0.2061423291937766	
+/truenas-big/images/10/a3/10a3d9c89857c260b90977c81f67f9c5fb746cdc10c87ed1639bcf3c29703b44.WEBP	gpt_4o	clean	clean	clean	0.9876948005085205	
+/truenas-big/images/57/50/57508a82ca5e0f1c7fa418f80eb07fed6a329535844da2a710ef29f9d765b212.WEBP	gpt_4o	clean	clean	clean	0.9998364617881838	
+/truenas-big/images/d0/26/d0264089e7d90b08f6e26be7e759691c305fb6ba1af0f25cff93aeb700bc6107.WEBP	gpt_4o	clean	watermarked	grok	0.9984088129768112	
+/truenas-big/images/b9/3d/b93d5bdbb0364bad34e08d72d6cb85b5ca7cc133e3520560d5307c6f2034c8e9.WEBP	gpt_4o	clean	clean	clean	0.9999528820741195	
+/truenas-big/images/0e/25/0e252a5cc6f5e67c449e8998d14585d45816d3a3a9f77293d362206773f05113.WEBP	gpt_4o	clean	clean	clean	0.9999999678755968	
+/truenas-big/images/3f/2e/3f2e64e4714e5f0ffe6e84e933a91b06b9c591266dc8820663b30aebcad46f3d.WEBP	gpt_4o	clean	clean	clean	0.9964327874543558	
+/truenas-big/images/26/8d/268d2ff459afa99534d80479b0f5c35cb56850f909279194a0a48bbdeb491f49.WEBP	gpt_4o	clean	clean	clean	0.9993355512664336	
+/truenas-big/images/d6/4b/d64be09d228310ac77647f50d6f6eabd2cf493023b80773b610276dadb5198af.WEBP	gpt_4o	clean	clean	clean	0.9959959088671302	
+/truenas-big/images/e2/ab/e2ab8efb4002af5f2076f4feb8f27ae9b232c4bc48a07613770b5f9d90b87d1a.WEBP	gpt_4o	clean	watermarked	grok	0.9528080930954447	
+/truenas-big/images/35/fd/35fd339335f98452d1131b241010b2070757950a4a48b62a1f8bece2ab159076.WEBP	gpt_4o	clean	watermarked	grok	0.9999976489104431	
+/truenas-big/images/1f/c2/1fc2b3671b423ee893459d8397b1d12c04a35b1f4b4920b767c4be1c61552f98.WEBP	gpt_4o	clean	clean	clean	0.999951516940865	
+/truenas-big/images/2c/b4/2cb4f838d37980e050d09a8a110e23b8f297506cc8836b77901b59f84f062eeb.WEBP	gpt_4o	clean	clean	clean	0.9999230680569252	
+/truenas-big/images/c3/74/c3741578a623920c8cb2b5ed6f649fea7044c5975ff4265e39bb4f7dfc2308a0.WEBP	gpt_4o	clean	clean	clean	0.9999999916030639	
+/truenas-big/images/80/db/80db834ba028119a6d1075674bf8ad37f3409bf4ba4360ec2dd5c08982c4bbb5.WEBP	gpt_4o	clean	clean	clean	0.9999983722029527	
+/truenas-big/images/61/73/6173a265817fee539d5fca580f1594f748f074b81e9676330a478bb15d29f32a.WEBP	gpt_4o	clean	clean	clean	0.9988693108300734	
+/truenas-big/images/35/c8/35c86066f30301ddd24d564a38996e89334441a322b0f96715993be82e6e8baf.WEBP	gpt_4o	clean	clean	clean	0.9998994884177228	
+/truenas-big/images/c6/d7/c6d7315df86a53f05255d7345ad90b44b04262fcd2b8de040f62a6afd322a67f.WEBP	gpt_4o	clean	clean	clean	0.999997800354303	
+/truenas-big/images/1c/82/1c8250390f56b1e8710bc99ab79c39787b41bfc2ef11c7808b9a2500a551e573.WEBP	gpt_4o	clean	watermarked	gemini	0.1492127811383277	
+/truenas-big/images/83/2a/832a26d6b103385c8316c80fc0dbaaf2cace98a4413a34f8feddceb4b27c7b4c.WEBP	gpt_4o	clean	watermarked	gemini	0.7233283810165388	
+/truenas-big/images/ab/d7/abd727716078b51dce41669f16f2bbc4e9953bd441e08fdc3c2f76bc9b14a1a3.WEBP	gpt_4o	clean	clean	clean	0.9998948863272751	
+/truenas-big/images/47/83/47835615a11ac88cb9e3d7bb6b1e050c2bc06d977d31c16e672db28a022bde8f.WEBP	gpt_4o	clean	clean	clean	0.999982160238216	[289, 690, 406, 717]
+/truenas-big/images/24/01/240105b247146bb3c2b17a1e5bd48a33ab068d144bb8ee6c2939d5830cb01f09.WEBP	gpt_4o	clean	clean	clean	0.993915557920156	
+/truenas-big/images/12/3d/123d9849d861052a1dc920598b52d19cbda6be1618fdee2ead81a6773f81b557.WEBP	gpt_4o	clean	clean	clean	0.9999999732553704	
+/truenas-big/images/af/37/af37ff56304f67a762aec092acae864158b54d6e5a5b8851dabe84cc77708037.WEBP	gpt_4o	clean	watermarked	minimax_hailuo	0.4690648317337036	[1154, 647, 1282, 708]
+/truenas-big/images/08/2f/082fb2a129843e0fa31f70d62b098a276bd0b6aaf7512ba00ab6b1d8b1790184.WEBP	gpt_4o	clean	clean	clean	0.9987642620151971	
+/truenas-big/images/a5/fc/a5fc2d70fdd6a783ccf3d90b288da1262e6b1ef5307dd5ee06c072cec9bc64c2.WEBP	gpt_4o	clean	watermarked	minimax_hailuo	0.02309873182113526	
+/truenas-big/images/65/97/65974a6346ec490e8d6e080ad5ec63dec6ea9348b4426ade8d9316cd180c36ea.WEBP	gpt_4o	clean	clean	clean	0.9999956558325528	
+/truenas-big/images/07/d1/07d1d981ec02256f440bf170d7064aaee8bd7e3884bdd20bae39db2d33e687bc.JPEG	coco_2017	clean	watermarked	grok	0.9999996747454717	
+/truenas-big/images/24/70/2470c4eebd54fdd91f3d31974457b4fbd0c5f4bd2e5fe0dc94488dd231653f21.JPEG	coco_2017	clean	clean	clean	0.9857291652825404	
+/truenas-big/images/5f/3c/5f3cd51a69a0757171b5b0576cbb6761a328476ec2550bbcff6c943db8bcffe7.JPEG	coco_2017	clean	watermarked	grok	0.9992944786451919	
+/truenas-big/images/44/e6/44e6f854dbfaafe1a9ee4b0ada20fad8710e4d2583df8926962e51428ddff080.JPEG	coco_2017	clean	watermarked	grok	0.9999990109020414	
+/truenas-big/images/4e/4a/4e4aa48636124b111fdc4bd80dcc8418bc93f8e05d6ab826b451d2232567a3a7.JPEG	coco_2017	clean	watermarked	grok	0.23312728106975555	[230, 0, 451, 17]
+/truenas-big/images/40/61/4061ffe3bbe727d303944f42d219787b1230377544f9cfa2f5d826d814a636d1.JPEG	coco_2017	clean	watermarked	grok	0.9866707792773445	
+/truenas-big/images/ab/08/ab08cc805508722e5f9adf4759b4cd5b975f9962fd787efa9cd07754902bad24.JPEG	coco_2017	clean	clean	clean	0.9999992745038929	
+/truenas-big/images/7b/3a/7b3a8def6b8cc9f3c1f45c061d4bc1b5bfa22cfa06524fb2787558e98d80a319.JPEG	coco_2017	clean	watermarked	grok	0.9366566917245509	
+/truenas-big/images/cd/d5/cdd5ad1570204cb83c6efec6938f474c85e53e8c6250ba2c6805ddeba2a1b20d.JPEG	coco_2017	clean	clean	clean	0.9998905829079371	
+/truenas-big/images/2c/59/2c597096fa9ec2a0925d7480fb6aa3d32036620f73ee3badd252fcdb8eec3495.JPEG	coco_2017	clean	watermarked	grok	0.006002266177358509	
+/truenas-big/images/24/96/249634a621f25e0f436cf8379458e3ffac49f0b5fd977fa5294b471c5d0cb82c.JPEG	coco_2017	clean	watermarked	grok	0.9286076770774901	
+/truenas-big/images/e9/f6/e9f65182664f52a00e5b0c8e45b00d8474db3bf722412a67f2dbfe2003236867.JPEG	coco_2017	clean	watermarked	grok	0.9442387253447352	
+/truenas-big/images/31/d6/31d643763c48ffbaf0c5ff5c4bcff4009f2d608632225f4d24d2c601025c6256.JPEG	coco_2017	clean	clean	clean	0.9999999929409638	
+/truenas-big/images/68/44/68444d1618b2d67f11bb44b12bf53207e1b2d10c616bfee798d39a6ade5ee65d.JPEG	coco_2017	clean	clean	clean	0.9974978144285668	
+/truenas-big/images/36/96/3696915732b09f298ba425d67026eb2e672ec573ac6dca69d9484ce47368aa8b.JPEG	coco_2017	clean	clean	clean	0.5282179298398222	[625, 394, 640, 419]
+/truenas-big/images/d8/f1/d8f1e125b6b5ce6ba23b7da6d5b143acc9be05421c5705a241a4438d0887828b.JPEG	coco_2017	clean	clean	clean	0.9999988709912794	
+/truenas-big/images/c0/49/c0496fc1a909d46fe1432ffd32c74d83690003431cc29c468ef1488af66f685c.JPEG	coco_2017	clean	watermarked	grok	0.9963782375905774	
+/truenas-big/images/c4/4f/c44fea2061e7a5ecb6efb1ef7926cec855550c7f790b282dcada6adff4098bd3.JPEG	coco_2017	clean	clean	clean	0.9999983879703004	
+/truenas-big/images/77/bd/77bd3fbf8baf0b88c63e0411ec3297e98f3a527489e965d239c58141ac49dc4a.JPEG	coco_2017	clean	watermarked	gemini	0.9752383393544971	
+/truenas-big/images/0d/c1/0dc10938ed25aa6d0dcac4bb378e21720bf9b1d9280b5c9a2aa286ce7c113239.JPEG	coco_2017	clean	clean	clean	0.9999999150477784	
+/truenas-big/images/13/91/13917999b3db326a2acbe5f5ce6cf894bd4e5cfd659ead2ccc29f4a1619623a3.JPEG	coco_2017	clean	watermarked	grok	0.9999966374802792	
+/truenas-big/images/0e/f3/0ef3ed266373b18646e8b66f72a05dc168d1c36c70bc77840876ce727c232a38.JPEG	coco_2017	clean	clean	clean	0.9994203541952285	
+/truenas-big/images/dc/36/dc364fc56e158c2db349ab4a686ff70e65ca1466511e09e61b2c63d00ac86abd.JPEG	coco_2017	clean	watermarked	grok	0.8236254408951331	[0, 382, 61, 417]
+/truenas-big/images/e4/9f/e49f48bfe8c1adb435c4c85cf569e52161a2a90d865621b744cbaa82e0eda810.JPEG	coco_2017	clean	watermarked	grok	0.9542132805613078	
+/truenas-big/images/76/c6/76c6e4be878724f3f6aa74b5cc9a24b99d0bd18b03ca900185c7a7529c4de7ec.JPEG	coco_2017	clean	clean	clean	0.9960961603981207	
+/truenas-big/images/d4/7f/d47f2ab84717d6a1c8ac5f02e94fa2be2ea1f4309031e09764c04c650e81706f.JPEG	coco_2017	clean	watermarked	grok	0.9996721729580361	
+/truenas-big/images/71/a7/71a74a0eee455d2eaf3b9482c50b7b0386fac2f26b6bedc9b695b1d0643b456c.JPEG	coco_2017	clean	clean	clean	0.9997801801520656	
+/truenas-big/images/7a/1d/7a1dc15b9792ac7ed66b9ea85ec1de55e8a199882df8e2c1ec998ebf6d4e39b9.JPEG	coco_2017	clean	watermarked	grok	0.9999996054498141	
+/truenas-big/images/49/bd/49bda05a9e740c11a8e74dfc4d10c64aa71ac6464cb2cd2752f31430e19d23ea.JPEG	coco_2017	clean	watermarked	grok	0.1049790221725337	
+/truenas-big/images/91/92/91929080abcf96539bff07def01f1d69c34f5388aba97b10b5454bc93d8b8540.JPEG	coco_2017	clean	watermarked	grok	0.9985582510984892	
+/truenas-big/images/5e/2f/5e2fb89602c4c67fbe349097033f400450c997c0f36203ae43af6bfa72e293a6.JPEG	coco_2017	clean	watermarked	grok	0.9314747001852006	
+/truenas-big/images/b2/81/b28132ec52126b047e98163eb11f1bd4212fea2bab8d0538fbb601519462e6d8.JPEG	coco_2017	clean	clean	clean	0.9998351787970512	
+/truenas-big/images/04/94/049433fa2b485c322af646f1021c7fc08b157efc5becfe0bb4e73ab809c65884.JPEG	coco_2017	clean	watermarked	grok	0.9347835382643406	
+/truenas-big/images/4d/00/4d0060c174d6e5af1512c132f88628f105a5d9ed38d7a1d8c037e04d96da8ff3.JPEG	coco_2017	clean	watermarked	minimax_hailuo	0.12464323913386396	
+/truenas-big/images/f1/4b/f14b93480bcaf8d07e44c4765afe25d9f82a1bd4521e70b0042bb3f1adc66809.JPEG	coco_2017	clean	clean	clean	0.9996715894764396	
+/truenas-big/images/f2/1e/f21e44786801467724b9f89e8d2f2209ae8bdbc2809e6e08f4836676ebc1a248.JPEG	coco_2017	clean	watermarked	gemini	0.7935384593143252	
+/truenas-big/images/fa/a9/faa923d92830da5751bffb0791faf43c19fd5e9648e711b9c40fbb2e30aa1a87.JPEG	coco_2017	clean	clean	clean	0.9999446342862609	
+/truenas-big/images/dd/94/dd9478a9e48589b4daacc96e437d5d5548c01dab8c710b424082c3f95d613736.JPEG	coco_2017	clean	watermarked	grok	0.9999998692702434	
+/truenas-big/images/a1/ab/a1ab7dfaffce63894976dbc06ac3ef8c04295de7bd76b3281bb8c7a540916729.JPEG	coco_2017	clean	clean	clean	0.9999970185098916	[335, 470, 374, 499]
+/truenas-big/images/5d/64/5d6434431a5d6a083ec875ad6cb464376aa0df1fbef8d8928243f0c982f36080.JPEG	coco_2017	clean	clean	clean	0.9999992702503485	
+/truenas-big/images/44/d4/44d4b074e0a331bcee8f5c97a9dbc34cecf860e195d928b164ec8dec92a8f04d.JPEG	openimages	clean	clean	clean	0.9999432185279192	
+/truenas-big/images/d2/93/d2930a321a16758ea60c3754c684313f500b3532d339cda66baf1442b6f21a87.JPEG	openimages	clean	clean	clean	0.9994385793805857	
+/truenas-big/images/27/32/27326c088534455a51fb2394f2cb5d8a2f42a8aaa1a42357ffe3fc8a491e866c.JPEG	openimages	clean	watermarked	grok	0.9996208082318582	
+/truenas-big/images/3b/d2/3bd2df40af0f322b1b56827c73603e3824b9f2fb2f8c90a8eaed59c685654f2f.JPEG	openimages	clean	clean	clean	0.9955261480549691	
+/truenas-big/images/14/ae/14ae0ca93ee8684d414561971c5e8c0cb379b3791d57481bb4e92d6ad09df032.JPEG	openimages	clean	watermarked	grok	0.005312304906455556	
+/truenas-big/images/95/89/9589fbc9180b6dca9bb00ff4c47c6093b04f26937b86d7601caeb168ec78dfdc.JPEG	openimages	clean	watermarked	grok	0.20509912975129826	
+/truenas-big/images/9e/bb/9ebb6e002fc9667c7f666e6752d8715941ff15f6a04be767c24dda2bada819ec.JPEG	openimages	clean	watermarked	grok	0.8590799325407474	
+/truenas-big/images/f3/6e/f36e17f1b82ee93163685308b8116c12de5a63b8936c30f33bd4b7833a29d68f.JPEG	openimages	clean	watermarked	grok	0.8828973224791657	
+/truenas-big/images/97/ae/97ae79508480e04c259fe706dee9fcea6180eddb8746885c77e92e64ede3e334.JPEG	openimages	clean	clean	clean	0.9999670000634806	
+/truenas-big/images/b7/75/b77597213605e69c2642e818f077279b7891eb55531d9498ff5222e53dfd46e7.JPEG	openimages	clean	clean	clean	0.9998400148438236	
+/truenas-big/images/c4/a7/c4a7f305ce1cd485967a5a736827b962e676891ede8d6c6280921f72a439a442.JPEG	openimages	clean	clean	clean	0.9999999999495635	
+/truenas-big/images/58/20/5820f03aab0740455459977b8221f6b04a3e98870bb4023ef3c0a9aafc91a305.JPEG	openimages	clean	watermarked	grok	0.45978808217976747	[870, 713, 1024, 767]
+/truenas-big/images/50/0d/500dbfac9e9297ce37173c41e6be3576d02f7490217363b43abb2a230652a58c.JPEG	openimages	clean	watermarked	grok	0.9104273785876517	
+/truenas-big/images/50/3c/503c2daed6b3519feac0878a8c5806541baa7cf24514501fd35e608f30939a83.JPEG	openimages	clean	watermarked	grok	0.6739742159843445	[0, 949, 117, 999]
+/truenas-big/images/a7/8c/a78c22193848e836ff5cd96f7114a6dc0c5829e33607291e439a773fb1deb339.JPEG	openimages	clean	clean	clean	0.9981616532146916	
+/truenas-big/images/a8/25/a825a8b4dff1613beb7bf3aae90ec31f09266e7c011d85140423a6b46dcb05b4.JPEG	openimages	clean	watermarked	grok	0.03206115035305325	
+/truenas-big/images/78/8e/788e1f4cfdac9ed00b2e3ed8dcf663caeb3fca5d0a5f022635f40a891638649d.JPEG	openimages	clean	clean	clean	0.9561659690357881	
+/truenas-big/images/12/90/1290a09eb7f401724302ade3d6d7740cac1dcaf6908b6eb2e903ef8e24fc8388.JPEG	openimages	clean	clean	clean	0.9999542852029604	
+/truenas-big/images/dd/9b/dd9b64d39f9de5ad1771c70b406f2b1fafd73ec25f7c8bf8f763a74d2f8f278d.JPEG	openimages	clean	clean	clean	0.9997551758478848	
+/truenas-big/images/47/fc/47fc1753b24373d245b0074e10d1de84b224728a2965a33e4a367c56372104ae.JPEG	openimages	clean	watermarked	grok	0.9999998416257954	
+/truenas-big/images/93/53/935361e73348c8260960ce1c15c3c5fd6010d842afcdda379dbf5f4ec9a6d4c6.JPEG	openimages	clean	watermarked	grok	0.5579867461549056	
+/truenas-big/images/14/dd/14ddfce7ed1853af550f6fd24b1ea51ef8e55be0fd677a787bfaf39030aac1d6.JPEG	openimages	clean	clean	clean	0.9991767303473595	
+/truenas-big/images/18/ad/18ad43979f5ab3eb0d9fb30a6f4afc69fbd5430f906a6a411c55c4fe802716fb.JPEG	openimages	clean	clean	clean	0.9989201431624393	
+/truenas-big/images/1c/bb/1cbb06393443ed10c381b741e86111189511d4ad36aacfb744ce41386ab0226a.JPEG	openimages	clean	clean	clean	0.9999517094003904	
+/truenas-big/images/31/c7/31c7f9aaca413eb29d70b82e740f042c6cacf6899ad8cd9fb93e8b82f52f5501.JPEG	openimages	clean	clean	clean	0.9935862433922048	
+/truenas-big/images/84/c9/84c997cf699cccd79dcab0ee3b4f7e52af60b853f175e5751d2c2e5a02a282e2.JPEG	openimages	clean	clean	clean	0.9999999919769206	
+/truenas-big/images/43/63/43631ad55f67631cdd69a9c7593ca6d52cd9a1da76213286ba4d455cd5a3f181.JPEG	openimages	clean	watermarked	grok	0.9049582258471192	
+/truenas-big/images/27/be/27bef995835cb55709e3acf7ae9e20a946ab83203c51271db8fe8fc88d41dfab.JPEG	openimages	clean	clean	clean	0.6250081327725248	
+/truenas-big/images/77/b4/77b41224119382c8d22c766d6adede2bc246984faea5ebdd40b9625215f17b31.JPEG	openimages	clean	clean	clean	0.9991602732086803	
+/truenas-big/images/f4/01/f401290a5138682befbd0b5e9fa956071a740ac54837cc1952e82fd71669ceae.JPEG	openimages	clean	watermarked	grok	0.6055241227149963	[863, 662, 1022, 714]
+/truenas-big/images/79/9c/799cc60d93c1155dfe079d27d0e58526a190a503084df35cd23336bd26c87fc5.JPEG	openimages	clean	clean	clean	0.9999996944278046	
+/truenas-big/images/d2/5c/d25c2ce3c2d514ce7d63e47435600fdef6c950418b8927496932632f20810245.JPEG	openimages	clean	clean	clean	0.9999954272166619	
+/truenas-big/images/b2/9f/b29f9c85456a3f45abe071203ac2a1a317bd2a6ecd5b4df3876ef82f62abae12.JPEG	openimages	clean	clean	clean	0.9999984176929974	
+/truenas-big/images/e3/21/e321a99425e980811ba1703ded8d7c7b827b4ee8539828e0801c8da7fbdf1123.JPEG	openimages	clean	clean	clean	0.9999975573713388	
+/truenas-big/images/3e/16/3e1626f78322de6adaef2e64c66190867af80f0ab88f137b95f80045df13cf95.JPEG	openimages	clean	clean	clean	0.9999997584279652	
+/truenas-big/images/52/f1/52f1d0cb108adcc27db16eb93de6d16417592cc5da07f8af25351b9ae7979a01.JPEG	openimages	clean	watermarked	grok	0.9996695119790685	
+/truenas-big/images/62/43/624375a031018684555ff56f1c16bf191b2e7d005c5232d94abc56c22ba7bb3d.JPEG	openimages	clean	watermarked	grok	0.9988172720376407	
+/truenas-big/images/a6/70/a670997bb1481b48eab57bc99fa9a9106db41bfb99904171dd55f9f9becce4e5.JPEG	openimages	clean	watermarked	grok	0.9871906099145789	
+/truenas-big/images/16/7b/167b3236a5384e8cba7fb30980dc385c017c14a6275d09d42fd4db8d6acd699a.JPEG	openimages	clean	watermarked	grok	0.999859558543318	
+/truenas-big/images/b2/c7/b2c76db4ebe3127845b2c796c36402448eec31a3e21a29467c7835c48e358402.JPEG	openimages	clean	watermarked	grok	0.99999991383239	
+/truenas-big/images/88/3b/883bd831af8b17521a11ea2721cd9e71b4f031a7681871325c2a408ed28ab255.JPEG	laion400m	clean	clean	clean	0.9997667152704073	[464, 92, 511, 116]
+/truenas-big/images/37/9c/379c1ef45c4ab0ef5f3c96dd3a758d7562c4d18316babc14c1fc5aaa989578d4.JPEG	laion400m	clean	clean	clean	0.9981399873348376	
+/truenas-big/images/a1/78/a1789e5762d5c34c0180b686619f66c17752f2a146f0a9010a5e3c897343912a.JPEG	laion400m	clean	clean	clean	0.9999980488317558	
+/truenas-big/images/e8/3c/e83cb36d13d840bbf5c33e72e67bbcab9cb6ac3086230e9e4b836786c4d72b19.JPEG	laion400m	clean	clean	clean	0.999907534849698	
+/truenas-big/images/fe/6e/fe6ed4cd9432f1e95518c7a99c6f898b4ca577d8ddaf9f462b167e7cb51cfd2b.JPEG	laion400m	clean	clean	clean	0.9799805921738561	
+/truenas-big/images/b6/29/b6297d36b8fac0359871f00fdcee0057c89b3703e42c2ddeb3c1105b3a8a7f72.JPEG	laion400m	clean	clean	clean	0.9996410060682015	
+/truenas-big/images/b1/8f/b18fa05a60a5c01b306afa946117b62c13ead5b86602579bc29b1cb856e4058d.JPEG	laion400m	clean	clean	clean	0.9999997728598239	
+/truenas-big/images/94/73/9473e4ef8340afa9ce1b8ec9b9e5e66f3f2b0275308cb27045317c8a76bb3887.JPEG	laion400m	clean	clean	clean	0.9996959478039329	
+/truenas-big/images/a2/56/a2566baaec58c241b32ca0f79c8dcfdd0193e7ff7932e0e19347b529bed8321b.JPEG	laion400m	clean	clean	clean	0.9968122097735992	
+/truenas-big/images/5f/30/5f30385673db265841964f5e0d64d98fcf32efcbee6013337fdee4d0d118c809.JPEG	laion400m	clean	clean	clean	0.9998097059732175	
+/truenas-big/images/d5/bd/d5bdb4f9d0f4c15493d6eb5d52ec05e8a482c9d97e93a5c41f1615d11fd32216.JPEG	laion400m	clean	clean	clean	0.9999995799546116	
+/truenas-big/images/dc/6f/dc6f354c27909616b0ac684e8778a9020f309bbda2ab269026c9b680c7780092.JPEG	laion400m	clean	clean	clean	0.9999999997683942	
+/truenas-big/images/a7/fd/a7fdcb65c3978e407dd2e53bee8598ab5232e53b2c1a8e80b00fc1f5c70bce92.JPEG	laion400m	clean	clean	clean	0.9997669766786806	[480, 81, 511, 107]
+/truenas-big/images/d8/87/d8873dc7d7a28279817f9e2fdc6a702be9878b749c1e3b7ad55d69139f74a84c.JPEG	laion400m	clean	clean	clean	0.9999755166778962	
+/truenas-big/images/e0/03/e00363c0212e285fc68c082b1fc8d950f167afdde3d4a64ec1dbd67ce0357bca.JPEG	laion400m	clean	clean	clean	0.9999942989001934	
+/truenas-big/images/ab/34/ab34ad72d0e2dbcf5742dd32c9f5a752e18f6b25d40c6ae5565b5e6101261dac.JPEG	laion400m	clean	clean	clean	0.9982570669847963	
+/truenas-big/images/2b/95/2b951fa5239ebfb067453a10920d59e6fe0b9016239b13ae1974c9e11a769496.JPEG	laion400m	clean	clean	clean	0.9999995912052798	
+/truenas-big/images/79/ca/79cadef2325d66eab187d40179433005dceb390c8f7824f8b1c6a62a5063a5e0.JPEG	laion400m	clean	clean	clean	0.9989624276805882	
+/truenas-big/images/c8/5d/c85df3e3996bde8134cb1a83ae826161ce0010ca9094fdb65e215588e036b95a.JPEG	laion400m	clean	clean	clean	0.9999998130139599	
+/truenas-big/images/5d/54/5d5450d689ce0fa77d8d37b616e35481e6ca523dafa01e1249e47ab7e01699a5.JPEG	laion400m	clean	watermarked	grok	0.9109592789948021	
+/truenas-big/images/76/44/764439e9d35b097fd2a5f025ef8d7f627c0b467199b9ebf5babb8b1ff7df28e1.JPEG	laion400m	clean	clean	clean	0.999976716769851	
+/truenas-big/images/27/07/27073f80156720e04112cf80aee831df238536f59357ff075ff513e7f797fa47.JPEG	laion400m	clean	clean	clean	0.9974841655630557	
+/truenas-big/images/a8/b0/a8b0324ec6bc1ab99dea6af8fa9a82acb292680e516b223fc68ea24ba3cdd93f.JPEG	laion400m	clean	clean	clean	0.9999990915336849	
+/truenas-big/images/55/4f/554f34b8c10158fd5eaf879c2e6c09a4e8b7684de448c4c7704d430d6404f33f.JPEG	laion400m	clean	clean	clean	0.9999602679034906	
+/truenas-big/images/ad/32/ad3292dd958892922b83994243e589d8cd48281893070c0c09b3402bda55a37b.JPEG	laion400m	clean	clean	clean	0.9999999461762799	
+/truenas-big/images/f1/0e/f10e5421e545e0ae63dc95c817ade78c17a163259dc24a3420a1a2815c2afbbc.JPEG	laion400m	clean	clean	clean	0.9998152132271406	
+/truenas-big/images/c1/38/c138ba29b1d18ab5965bf11ae7ef54b2c80dfa7748e9606d07d4f5dc430b8a84.JPEG	laion400m	clean	clean	clean	0.9997077761286411	
+/truenas-big/images/44/eb/44eba3f1226d97056d2b906b0f878e2f7d1b8e876714509d2b6d7403537e7657.JPEG	laion400m	clean	clean	clean	0.999987614268088	
+/truenas-big/images/a5/61/a561c984cfe755eb1af908c691810fb640adc6a9f481a05c565e6e00fb39baed.JPEG	laion400m	clean	watermarked	grok	0.04274630163425111	
+/truenas-big/images/c4/15/c4157a4065e4f765fc68a9fbf25f0095c54138d495cc32e2c3ceddadfa18688a.JPEG	laion400m	clean	clean	clean	0.9999547812773738	
+/truenas-big/images/a5/b4/a5b4ba2c45f68792fbada8cbebc64dff9f321f384e156944a992a6974942d7b1.JPEG	laion400m	clean	clean	clean	0.9999993965715213	
+/truenas-big/images/8d/20/8d202f5e50a5fb0250bda6d6a5a840e88361eaea8060d66a4151d68a9109fddf.JPEG	laion400m	clean	clean	clean	0.9998553927112104	
+/truenas-big/images/5d/79/5d79bfd3d215e85ccace3b99e4cd28f6f37c68eccc67c3c9fa42a23f86bd587e.JPEG	laion400m	clean	watermarked	grok	0.53355473279953	[444, 387, 511, 405]
+/truenas-big/images/ac/8e/ac8edae6c1851105dc5b137db9625a9d60d2aeb4142b3e0436cbe0d57e3874ad.JPEG	laion400m	clean	clean	clean	0.9994961435442486	
+/truenas-big/images/cd/57/cd576d265daedabba7c4dbd403980d321e02625292cfa6674a0225231edb629d.JPEG	laion400m	clean	clean	clean	0.9997084071466639	[479, 54, 511, 78]
+/truenas-big/images/d9/eb/d9ebf29dc84b0a5b314c2a5ef882efa9f231e28aec1552210135d4b829c2ee07.JPEG	laion400m	clean	clean	clean	0.9990887228446013	
+/truenas-big/images/3d/bb/3dbbabf3f8fe8d7e48b4c136936b87f84ffc1e14a04073a50f656aca1c0fc4f5.JPEG	laion400m	clean	clean	clean	0.9999655146668173	
+/truenas-big/images/ad/03/ad03e5240b9e7fc5df6c59b6752e1411f36156d92a5c999ee928f5bd03219b31.JPEG	laion400m	clean	clean	clean	0.9997918367575909	
+/truenas-big/images/7b/ec/7bec53cbb74533c0a3c4a905628a82b1e9040b765d226f3fd40c6834e053dfa8.JPEG	laion400m	clean	clean	clean	0.9999994389301602	
+/truenas-big/images/58/03/5803aca797fd507a2ff162dc380019b84edac034515ef03bc3592baca5d6a3d7.JPEG	laion400m	clean	clean	clean	0.9999744678629242	
+/truenas-big/images/52/0f/520f515357d0dddf9a20beff0d11344e4004be1cf72df53057bef1fc249d909a.WEBP	civitai	clean	clean	clean	0.9999796484050466	
+/truenas-big/images/d9/0d/d90dc3462b0091a25c161dd7ee339e039a60e309ca5a996568bea95ee1b7d91a.PNG	civitai	clean	clean	clean	0.9999803982337437	
+/truenas-big/images/a5/ec/a5ecf1b7752fac12e67c1c5bb79e3596c891da06ae3fc345ede97f953a7f4358.PNG	civitai	clean	watermarked	grok	0.07971543927908464	
+/truenas-big/images/d1/94/d1949d1694d73bdcf41a6fd9b08dd9f68dc4eb7498b4bc8c14b6a657ed3e9801.JPEG	civitai	clean	clean	clean	0.9999660532609133	
+/truenas-big/images/29/3a/293a72e173955539ab92a4851d9bdda7de6246eb6605a6688eaf722ea83557cf.PNG	civitai	clean	clean	clean	0.9999516547366741	
+/truenas-big/images/1d/df/1ddf8bb3ce334034c8a745cdfd8f8f86b07907eda13648ac93690edadca46aa0.JPEG	civitai	clean	watermarked	minimax_hailuo	0.9786498167070528	
+/truenas-big/images/71/90/71905ecded6a028b8c678ec004fae0ca6d8a14101668646d2825efea714c9b27.JPEG	civitai	clean	clean	clean	0.6506388119632834	
+/truenas-big/images/e0/8e/e08ec4d34fa65eb870e4d15a9f8b3f3b60ea0d194db924d900e7a7788db00d41.JPEG	civitai	clean	clean	clean	0.9984917833547429	
+/truenas-big/images/7e/e9/7ee9467af74ca8ac66795d70d91e1347a897bd5e8a241007f79393a3259af32f.JPEG	civitai	clean	watermarked	minimax_hailuo	0.9260983551204384	
+/truenas-big/images/86/a5/86a547fe0876db32d34c671ff08d1742ffd18135717b5379e859133935c0f717.PNG	civitai	clean	clean	clean	0.9829896729235553	
+/truenas-big/images/80/fa/80faede771539f7f887a3fdd625f22deae29a75671ef43e85afafcd7ac0dc013.JPEG	civitai	clean	clean	clean	0.9999776214489875	
+/truenas-big/images/fa/2a/fa2a117f423d2b04e80e63842ff61dfbea286a62f94c3447770457e14ffd491b.WEBP	civitai	clean	watermarked	grok	0.21241086974421777	
+/truenas-big/images/fc/44/fc44ef114f6fd96d2ef6e85a3df4c872575b7093b831240eba9e369258d0879a.JPEG	civitai	clean	clean	clean	0.9999971592884308	
+/truenas-big/images/07/7a/077a882d32c4b84a1f47fb96b5ea979c44c954895c830a32137be2395909b43b.JPEG	civitai	clean	clean	clean	0.9550832510652519	
+/truenas-big/images/a2/f2/a2f2c274e3535e6804cf910530a08bed7d33893f16d822aa76ccf6ee16d7e86e.PNG	civitai	clean	clean	clean	0.9997284837592505	
+/truenas-big/images/02/ef/02ef9059d87dbdc104d4f27e9c52ab76030c751135d53cd66e44f83cc57988e1.PNG	civitai	clean	clean	clean	0.9988999802892771	
+/truenas-big/images/d9/4d/d94d3fd497cb79e7cc79b67d36dea911ed8d7f68e6ea65923772f82a507fe656.JPEG	civitai	clean	watermarked	grok	0.34080004692077637	[691, 1169, 832, 1216]
+/truenas-big/images/f9/2e/f92e582688673e152a5cfc86a7105405f99ac6d16c9dbc8547867412b0dddac4.PNG	civitai	clean	clean	clean	0.999998370877657	
+/truenas-big/images/fa/81/fa81faf08a194f8174f68cf304df605605def3d49dc2e3b40640b7b842334146.JPEG	civitai	clean	watermarked	minimax_hailuo	0.6507258905058778	
+/truenas-big/images/43/3c/433c8874539f7fef2d526b4c50107703e6878ff70edb513eefbbd6e4fb493c29.JPEG	civitai	clean	clean	clean	0.9977867044669978	
+/truenas-big/images/67/ac/67ac5c0e715932f5daf7eacdcae9329cab5d066a97ee447dec5203dafc9689db.JPEG	civitai	clean	watermarked	grok	0.014258599858122632	
+/truenas-big/images/9b/a6/9ba60d1d102b8fbacb7529547ad70d30ea0bf5809c2fbffa640b4fe3b9a956ec.PNG	civitai	clean	clean	clean	0.9989313094315423	
+/truenas-big/images/9f/7f/9f7f6ebf17b533fc8ad3b24452e20d465800cf9c635877eb099aa8287b5b7f6c.JPEG	civitai	clean	clean	clean	0.6069723508540408	
+/truenas-big/images/18/7e/187e897770307a0f4fad3e3078985b8cdb5fd4a399ada65b161dde0bf23af11f.JPEG	civitai	clean	clean	clean	0.8788044446489099	
+/truenas-big/images/bc/ca/bcca89c51cf120543899e856dc274f0d9c322100135373a5c4ee3a206e5cab4f.JPEG	civitai	clean	watermarked	minimax_hailuo	0.9980068701014173	
+/truenas-big/images/39/30/393062251ae4620961e6fb991b7ebafe34a5f7a878d76a852ef2d06c4e079e0f.JPEG	civitai	clean	watermarked	text_tpdne	0.9822479141156896	
+/truenas-big/images/ae/18/ae1823eec211fe2c12b6a10d35bea7567dc860bd1dae1bbd5946f487dc8d0eea.WEBP	civitai	clean	watermarked	grok	0.9990801651007025	
+/truenas-big/images/93/de/93dee01ae5a6b07db7e2b570a9b6df16e2534c6624bf003c1e196fde7c7cdba3.JPEG	civitai	clean	clean	clean	0.8799604798611548	
+/truenas-big/images/a4/9d/a49dbac68c3c9416952d0649a5236171047d99189fec6e7af3ddbd11f5a35767.JPEG	civitai	clean	watermarked	minimax_hailuo	0.7800692063333263	
+/truenas-big/images/a1/ba/a1ba4ce420e81d380abee369d7979e3b0da38aca347971564957875e393fb87e.JPEG	civitai	clean	clean	clean	0.9995721815092133	
+/truenas-big/images/6f/af/6faf388108ae2659753eb49dbce886bba131b1d12714873922b590e32fc54a59.JPEG	civitai	clean	clean	clean	0.9990604400454307	
+/truenas-big/images/42/bb/42bb5b4c3ae02716b56da16c8921dd8ddfad2bc4aade9e1b5574416cd0198070.JPEG	civitai	clean	watermarked	grok	0.5674974322319031	[865, 959, 1021, 1024]
+/truenas-big/images/75/bc/75bcb21f2e03f62830cab3ac4dc930f89f1b87f7c8d49d0a6e7d925c2d79d429.JPEG	civitai	clean	watermarked	grok	0.005447798664785614	
+/truenas-big/images/ef/4b/ef4b6b70d09ddda7c46821eafb61205ccb0bd398aab565538ed3b833ce4377a3.PNG	civitai	clean	clean	clean	0.9999999690026761	
+/truenas-big/images/d5/6d/d56d5c7af4a9c910cc8c41aea1d5e54bac746a9538c8ca7fb9d8150c2375f48d.JPEG	civitai	clean	clean	clean	0.999542766436215	
+/truenas-big/images/8a/01/8a017845d333d07e6423f7192d2dfbb577c1aeb510de079e55750822fbc175f8.JPEG	civitai	clean	watermarked	minimax_hailuo	0.02803758520493715	
+/truenas-big/images/4a/b6/4ab6f96f5e1846e5ac1fd80c3aa66d7aff39b941195cc2f8d1f662dd64ccfcff.JPEG	civitai	clean	watermarked	grok	0.44151023030281067	[2539, 1763, 2815, 1915]
+/truenas-big/images/43/ee/43eead808a62cca32d1328646ceac2a6721c0df977690d6a9f801293d1863f3e.JPEG	civitai	clean	watermarked	minimax_hailuo	0.9260328629196015	
+/truenas-big/images/40/18/401802d79aee0a1878b1216404beddeadc77c9f399907efc7b11448492ad4393.JPEG	civitai	clean	clean	clean	0.9998112959901899	
+/truenas-big/images/76/dd/76dd720690e54074e6f86bb4314cb315c3b5b5357808c1c1813ea332aa09bdb2.JPEG	civitai	clean	clean	clean	0.9998386997997017	
+/truenas-big/images/9a/8a/9a8ab3a3337f7fae7041a6b8f4a3956ef0999c960a9c141828d719308ff358d9.JPEG	ideogram_scrape	clean	clean	clean	0.9769882600009722	
+/truenas-big/images/31/84/3184c8f6ccbe97a776a86dbad7c259625eb2d2f1b192ba21eef0881208a22efa.JPEG	ideogram_scrape	clean	clean	clean	0.9999977884332348	
+/truenas-big/images/1a/b5/1ab5f003993f0d9cf845fc1081876356dededb774537bce17abd3589e88108e4.JPEG	ideogram_scrape	clean	clean	clean	0.9999308667420618	
+/truenas-big/images/66/e5/66e5a6d321aa906ca066d9bfcde431eacfed789b97d75cda5b965420545e70bd.JPEG	ideogram_scrape	clean	clean	clean	0.9999998492371792	
+/truenas-big/images/05/6c/056c9f95f24bfe3a23e2411d377d3676f17675431fbdb7c675dbc60571c7848a.JPEG	ideogram_scrape	clean	clean	clean	0.9999565461128801	
+/truenas-big/images/cf/79/cf79f3495dc5277b11bdf70201ab1d43aeed03e1e8033a9705ca13417a2edd9a.JPEG	ideogram_scrape	clean	clean	clean	0.9992486167124818	
+/truenas-big/images/89/06/8906f44e04533b6189412f690afffa81d84962f3d7a3b512c02c6c586f910fbb.JPEG	ideogram_scrape	clean	clean	clean	0.9784683365005249	
+/truenas-big/images/c3/f1/c3f12c31f4b3cb58e72a5edcc60f5d42222ee7f74de5eff6a3841b74aedffa51.JPEG	ideogram_scrape	clean	clean	clean	0.9999945101642506	
+/truenas-big/images/c6/1d/c61dfd7934d84aae5328766eb0ab3de1baf4a1de800d42d2707b17e007b84017.JPEG	ideogram_scrape	clean	watermarked	grok	0.971945382306587	
+/truenas-big/images/b0/1e/b01eb5177ff727f5eb7ab5e8433944706e9c3130a88ae412e373ed2619cf36cd.JPEG	ideogram_scrape	clean	clean	clean	0.9999998543022118	
+/truenas-big/images/f3/5f/f35f02deb5dec93328d3a5176f1e42d97f076d9d08b1dbe224df07d9615eaa4f.JPEG	ideogram_scrape	clean	clean	clean	0.999866539043539	
+/truenas-big/images/86/29/8629194da02346940729bfb7792b0ea715b08a2f8def235f91d996fa0a5115a3.JPEG	ideogram_scrape	clean	watermarked	grok	0.9999967759498885	
+/truenas-big/images/7b/06/7b065461cffa23419c6a3b86c7b5d11702ce074e8e2c26e09af94e1a8a2a8b4b.JPEG	ideogram_scrape	clean	watermarked	grok	0.5049910117182089	
+/truenas-big/images/40/90/4090c0998846bb9cdabccd29e36676343d3bb5dd2d90d9192c001fc3810a7702.JPEG	ideogram_scrape	clean	clean	clean	0.9998278262092507	
+/truenas-big/images/34/fa/34fa5da89745b171ca3480082eb168cf050eaef9a4b8c58982a4ffec3388eb5d.JPEG	ideogram_scrape	clean	clean	clean	0.9999953563227828	
+/truenas-big/images/ee/4e/ee4e1cd3e321643f42bc76b5dcbb73e37b07654ea3fd23d26f3434a81f28b26b.JPEG	ideogram_scrape	clean	clean	clean	0.9999986759405625	
+/truenas-big/images/b2/a7/b2a7b11f1fe102d9c74a5a9c10521572baff0c4e5b042e916860be945e2ce06d.JPEG	ideogram_scrape	clean	clean	clean	0.9999772122693803	
+/truenas-big/images/00/46/00461260ba2d7434e7b476757239625fe4ab067e06c9097c46e05a5c6471c7d4.JPEG	ideogram_scrape	clean	clean	clean	0.9998584471744503	
+/truenas-big/images/de/57/de578ef389d95eed53add7f1b91a3594ddaaf1a594dea1b7b0f52276d7515295.JPEG	ideogram_scrape	clean	clean	clean	0.9991410336574107	
+/truenas-big/images/40/9b/409b5557aac6f7ce621623207a42b0e6e90a406f664b9de98bdcc06f1efcbe27.JPEG	ideogram_scrape	clean	clean	clean	0.9999433065232783	
+/truenas-big/images/f2/b7/f2b7821d0e48970c12f0dc541f539630774070cc09f79d30691e28c66f5b1bae.JPEG	ideogram_scrape	clean	watermarked	grok	0.9999881459008244	
+/truenas-big/images/b8/44/b844a24cba46b888255d699394bbcaca41dd0de63aee6bc1b2975cf40d878085.JPEG	ideogram_scrape	clean	clean	clean	0.993509921194904	
+/truenas-big/images/32/4e/324e2eab7d831802150f88891b52fc9ddb289e6e227585eab420d353a1ab4c06.JPEG	ideogram_scrape	clean	clean	clean	0.9994642962220119	
+/truenas-big/images/05/6f/056f91d32f53d1f91db30f0323e08c22b672a9b76ebd5b2957d16b35f5305e67.JPEG	ideogram_scrape	clean	watermarked	grok	0.9999999827376113	
+/truenas-big/images/f0/33/f033f0c4535c08cfcb1ca97e4bcc159a1d53b75900ed1886ba8051e2f3ed1a31.JPEG	ideogram_scrape	clean	clean	clean	0.9631090163226013	
+/truenas-big/images/56/1c/561ca86efc68d533801bd6e8c48fa6f10e1da84f0f565a4194dd472bbf61d1b1.JPEG	ideogram_scrape	clean	clean	clean	0.9999999896142276	
+/truenas-big/images/52/74/52747ebe5ac1f3adfe0ee66c27d3009e12f92b760e27d79be68cc41553eb13d5.JPEG	ideogram_scrape	clean	watermarked	grok	0.9991670265130598	
+/truenas-big/images/96/9f/969fba136995237be289f6458169baa0baf90d8c616c12c5f385524f189488b4.JPEG	ideogram_scrape	clean	clean	clean	0.9999976864780817	
+/truenas-big/images/0a/1c/0a1cddd709ffd09efde01d90d67a6b5088f3e1fe1ef5aff2af9eac9b8baa5dc4.JPEG	ideogram_scrape	clean	clean	clean	0.9999035168966091	
+/truenas-big/images/36/17/3617841688556dc6290de9bedeb4837937847c65b7bdba80c573e1b8b0785250.JPEG	ideogram_scrape	clean	clean	clean	0.9961356915167843	
+/truenas-big/images/d9/75/d97598cb0e455cfb49943ce217cb846eada6cb4823c98c37c90f979d38dcf05d.JPEG	ideogram_scrape	clean	clean	clean	0.999999994734506	
+/truenas-big/images/69/84/69847470f35645d8024fc2fdcf113ae76be7593afe0dbd37fa63ba629d720e4e.JPEG	ideogram_scrape	clean	clean	clean	0.9999998753200194	
+/truenas-big/images/b7/13/b71312139f8ae9bf9c7e4c5111f145d0a5d881b0870981d588ff5bdc281205c5.JPEG	ideogram_scrape	clean	clean	clean	0.9999809129957985	
+/truenas-big/images/49/9f/499fbda518102f2b81b0223e2e137550c8e5394051935a8c2b900fa9e8903de8.JPEG	ideogram_scrape	clean	clean	clean	0.9999991070161826	
+/truenas-big/images/aa/41/aa419b35cfb5d00f0ae5082abe1125adfb1a20e8566e1328b0ce0653a43f05cb.JPEG	ideogram_scrape	clean	clean	clean	0.8652888910369624	
+/truenas-big/images/e2/f1/e2f123d75a0857c5ef44974d04b33ebdb3ca74097054eee60ba676f281a77a86.JPEG	ideogram_scrape	clean	watermarked	grok	0.9987846806632434	[0, 655, 124, 724]
+/truenas-big/images/a6/0f/a60fb46807fbd63b2d83e31bb1d9e05408ee8650be0c6f340cd05b23ef2c4862.JPEG	ideogram_scrape	clean	clean	clean	0.9998271984754369	
+/truenas-big/images/a4/55/a45550a38c04a9fcab5d9acf2a1fcb9eeab4c5fc10a15cf75945ac09ff773c52.JPEG	ideogram_scrape	clean	clean	clean	0.9989159406347473	
+/truenas-big/images/55/48/5548d31f76a17f2eba189bd16e7df3bf071777edb0d51a7517ef63f8bc60a4a4.JPEG	ideogram_scrape	clean	watermarked	grok	0.999496088622849	
+/truenas-big/images/af/df/afdfc2228a3fe2fc9658fa11d0e138bff214189453e8f12ac7f7086bd409c6fb.JPEG	ideogram_scrape	clean	clean	clean	0.9958756524261348	
+/truenas-big/images/9c/1c/9c1c4e1c4b6435d7956488839b782834e342df158c63e401efc0882546d95e87.JPEG	hunyuan	clean	watermarked	grok	0.014424997034954963	
+/truenas-big/images/0c/11/0c11e282260f081af8bcf42aec36467ee3e3a5a4c7e41a46525328277f24525c.JPEG	hunyuan	clean	watermarked	grok	0.9999967414052603	
+/truenas-big/images/48/95/4895b2a0ea2515c0fa1146c43375a1b3aafe15d75fd30f90f3ee7f0f464e5dcd.JPEG	hunyuan	clean	watermarked	grok	0.9984074776602228	
+/truenas-big/images/b1/92/b192a57c8fc7a1d6a9ca52c44fb07ac4565499a8d2cf8c226a187a9b9f00c00c.JPEG	hunyuan	clean	watermarked	grok	0.9999994405826828	
+/truenas-big/images/38/94/38946d31d0a84746851d70e7eb2f98ee921c877b1a3016b477c2ed03eeccc65f.JPEG	hunyuan	clean	watermarked	grok	0.9999999898408055	
+/truenas-big/images/2f/16/2f16f63cba2cc172d2179e6fad446dd3bfe708f2c6b3de3de9996d8b4a72c97b.JPEG	hunyuan	clean	watermarked	grok	0.9839691679316861	
+/truenas-big/images/c3/ca/c3ca51867b68cafcb870892be0ddc9d2621927811d317e84b3d4ac077fca6931.JPEG	hunyuan	clean	watermarked	grok	0.9999829503866938	
+/truenas-big/images/39/d3/39d3cafcb0bc266d1365033788f48c6d5d9bbaf52b688d75239b6bdc8be083f8.JPEG	hunyuan	clean	watermarked	grok	0.9999875938864822	
+/truenas-big/images/2f/21/2f21dfd218af7ebff645c097de03ea0ff602271c9e3632bfa6f69eb836f7710e.JPEG	hunyuan	clean	watermarked	grok	0.9951377862766118	
+/truenas-big/images/6d/58/6d5838ae729771278d9d78ff0e86ebaeea3672852fa7ba68f5c7fa044805aef3.JPEG	hunyuan	clean	watermarked	grok	0.9996622610537624	
+/truenas-big/images/90/10/90105874d141928cac54c7df1fb39115e43965e965dcb8ca8a6a091b981dc5b2.JPEG	hunyuan	clean	watermarked	grok	0.9980009728601646	
+/truenas-big/images/e9/19/e919bac11135e7750f6e9882bddee97a481c5f6d22cb2dd794f78e569a9275ea.JPEG	hunyuan	clean	watermarked	grok	0.9999499355148883	
+/truenas-big/images/e7/ab/e7ab7707bf46c2569b2cc9661c2b110938b1edbff8a7996064e77774577a2a79.JPEG	hunyuan	clean	watermarked	grok	0.9216449310492341	
+/truenas-big/images/06/5c/065cf02ec0a04b00f05b694678afec981422e2dcec7836ca4b27224cb8c9dc2f.JPEG	hunyuan	clean	watermarked	grok	0.9996579106567158	
+/truenas-big/images/01/71/017113c95d5ecd6cc36d3f5da177c99cbf5aec51d36abd7d00a7a28b7f5a9074.JPEG	hunyuan	clean	watermarked	grok	0.999999819365746	
+/truenas-big/images/1a/a2/1aa28f159e37ae0fcc966e15366ea1eff5b77719e37c61af4bab537b385bf38f.JPEG	hunyuan	clean	watermarked	grok	0.9991568982199748	
+/truenas-big/images/d6/83/d683b6dc4b3d8aafe2f43e2ec5b6f287b3b676755640cc64f3cb0a821130bc67.JPEG	hunyuan	clean	watermarked	grok	0.9854334207391123	
+/truenas-big/images/86/78/86784773d338b679465aed87f398919ee8cecfe9084028241ec77eeea03a5076.JPEG	hunyuan	clean	watermarked	grok	0.999999505262326	
+/truenas-big/images/39/25/392578e7aed20ca9152093c75e7607920481c17c6eca2196be3aca6501a210c8.JPEG	hunyuan	clean	watermarked	grok	0.9996421396741917	
+/truenas-big/images/9b/b2/9bb2d1a25b114c9053b7d60bd02a925be279f8e61c3d9c1fce60c7c85f289f59.JPEG	hunyuan	clean	watermarked	grok	0.9999508217304279	
+/truenas-big/images/a9/c4/a9c4cd04240d6850d044d21d762d45d17d3305607efb24eb3785788bfca0d1d8.JPEG	hunyuan	clean	watermarked	grok	0.9988997782387422	
+/truenas-big/images/fa/b7/fab739103b91d5adc39e6ddf3a59f13492f59cb17b4bcec2899eb1280b1c3603.JPEG	hunyuan	clean	clean	clean	0.9999999374674048	
+/truenas-big/images/23/7d/237d1469bc308d7e17e0e58c29636c271924b164e42a41f25e38a295139dbe29.JPEG	hunyuan	clean	watermarked	grok	0.9999508217304279	
+/truenas-big/images/f3/af/f3afb2b2cfc7aa8ea7aec71b8fbdc02aab61d9156036e1cbf00ee6ca2fd8b7b0.JPEG	hunyuan	clean	watermarked	grok	0.9993820464065164	
+/truenas-big/images/d9/4e/d94e970bdfc18d2eb21da5e66f26bf6aa3ca651a0ff674f73115a3184bba916c.JPEG	hunyuan	clean	watermarked	grok	0.7746386560211207	
+/truenas-big/images/a1/71/a1716204338e330a71b1c2b7b3a8625c923ad67e02e2a73336ad17f5b75c5833.JPEG	hunyuan	clean	watermarked	grok	0.9997660078052365	
+/truenas-big/images/38/c1/38c1e7d1323b5aeb7483a77cb41530792a2f57a601b27cc970abd56f660b0002.JPEG	hunyuan	clean	watermarked	grok	0.9723701128220805	
+/truenas-big/images/f2/9a/f29a8751ec83a9bcbb313d60ff7fee820573f09bfbb699dc03e7733b65bf59df.JPEG	hunyuan	clean	watermarked	grok	0.9999995733705537	
+/truenas-big/images/12/08/1208732d29944c51bfcc43f85bcd745eb58f3fb948efd0df9195bbfc58edcc3c.JPEG	hunyuan	clean	watermarked	grok	0.9961717484947062	
+/truenas-big/images/3d/14/3d142efa77001346404e36463497a095d3a791d0574ad6c6a0afdc416d06fb3b.JPEG	hunyuan	clean	clean	clean	0.5015238749085943	
+/truenas-big/images/72/5a/725abc4d0b70c1565186449cd6b87c4c035778589c6d2236157ec7cce67f69d4.PNG	wan	clean	clean	clean	0.9999840519177907	
+/truenas-big/images/f0/f9/f0f950396b5a652562443ba477963c682cb1bf91e6298fe27af4834c712b03aa.PNG	wan	clean	clean	clean	0.9999982462902144	
+/truenas-big/images/4e/44/4e44fc200a92c068c7da19d5bb73e3652e48e5f3566f6ad24bf4ac544ba27d40.PNG	wan	clean	clean	clean	0.999995478299675	
+/truenas-big/images/ea/a3/eaa34f5754b95630a551805d4b81261dc8df314ca8371ad20e4d53e407dcdcec.PNG	wan	clean	clean	clean	0.9999998099395454	
+/truenas-big/images/da/76/da76e48b093dbd4411913f72aa1e2e155afd3bfd0715ec75552dfcd1a3d7bbed.PNG	wan	clean	clean	clean	0.9999990618301668	
+/truenas-big/images/4d/08/4d08bb65bab891e5ac4bc2e342191aea3a522443367c078c5fe63cbd3ba03ef4.PNG	wan	clean	clean	clean	0.9999981485678763	
+/truenas-big/images/db/fd/dbfdd032bcdcd7e74455cdbb9eec41bbe1fc8a07d3b6bfdca80492b0eedd5b6c.PNG	wan	clean	clean	clean	0.9999928619469374	
+/truenas-big/images/1b/3e/1b3eda5e5e8c6e34059f2dd45c2aba30cbe51256c028657d8647995af08fd307.PNG	wan	clean	watermarked	grok	0.01054630026733842	
+/truenas-big/images/d2/27/d2276348274728f44a7d94a25a891373da615e3aa1af8fb343d71b340c49b722.PNG	wan	clean	clean	clean	0.999919715031674	
+/truenas-big/images/f5/81/f581df0f47a52de34a3af21ab0ff04f59067669a1238d0cf367eabfcddf9c793.PNG	wan	clean	clean	clean	0.9996418666305266	
+/truenas-big/images/be/6e/be6e5172dcba4103e935984032562b2540318e34d0f68396313e4176e1ac88e3.JPEG	wan	clean	clean	clean	0.9962511203037849	
+/truenas-big/images/4d/4b/4d4bf913bf6a87c8fb6afd2ef7a6961cc0d14847eb55271d5e00a4808ccaa21a.JPEG	wan	clean	clean	clean	0.996094339397785	
+/truenas-big/images/34/ab/34ab27a509480c5cd68f7799268523e63253d0d59fc28749b7fc44c6ab1e853b.JPEG	wan	clean	clean	clean	0.9999924769448924	
+/truenas-big/images/fa/9f/fa9f9a248e6962da78b0b8ada08013ffb2c8b3be785f804bc17e635736804524.JPEG	wan	clean	clean	clean	0.9999839887248095	
+/truenas-big/images/ee/30/ee30d28efedcb5eed0a50abdcee217833d39e465bae741edcbf4259fac5cee18.JPEG	wan	clean	clean	clean	0.9993486964694063	
+/truenas-big/images/a7/a4/a7a4fdef325813eadb5a214131f30b2ce4e7e7071929499f7ab41fc982b69610.JPEG	wan	clean	clean	clean	0.9999994051291651	
+/truenas-big/images/33/10/331093e52f94414502d57414ab5e93e04e1ef036b9e281eb7a64cd516aa8084d.JPEG	wan	clean	clean	clean	0.9999997726015075	
+/truenas-big/images/0e/30/0e304877173db0b49871bae839ce1fcbcf3f0dbcee3bbd24885b2ebd8600ba2e.JPEG	wan	clean	clean	clean	0.9999993387816566	
+/truenas-big/images/0a/08/0a080e7a13ff68253ad5693899d47399db0c47240c88c3bc43a58671aba51cf6.JPEG	wan	clean	clean	clean	0.9998203297806537	
+/truenas-big/images/72/6a/726a2b19e6a5dd3de5d23a605e5b29684e16625c01e97551d6841978a6ac6386.JPEG	wan	clean	clean	clean	0.9988004373079757	
+/truenas-big/images/6d/62/6d62ed8eef3491acde715557a187abec7cab7d12e8fdc96477ed9b922171c217.JPEG	wan	clean	clean	clean	0.999985290341039	
+/truenas-big/images/ea/ea/eaeae2bcf637be97ebf144744dc325d0737a4a69dc6503b9d512e6557d75eb2f.JPEG	wan	clean	clean	clean	0.9999987247999048	
+/truenas-big/images/24/e7/24e7d278b09ede6242f246f909ec48a2cc37bddfd5a70467d81581596301ab38.JPEG	wan	clean	clean	clean	0.999997017079666	
+/truenas-big/images/b7/07/b70780f3caa6b5f07212afb34232a86a062454f007de712cf77a175f61ea8e15.JPEG	wan	clean	clean	clean	0.9966287663925948	
+/truenas-big/images/af/8c/af8c9162e5b488847a9a9407490973e7b334e08ab2a4e70bab4958f122ab3c68.JPEG	wan	clean	clean	clean	0.9999468485438391	
+/truenas-big/images/76/65/766515a32ed73bd392f8d4db9d4d3ec1f3d2f33e66300f286b629afdb40206de.JPEG	wan	clean	clean	clean	0.9999954092728547	
+/truenas-big/images/c7/1e/c71eb8045cfd9b36971361aa74ae68814f2a5345039b3106a06b4ded46cdd4a1.JPEG	wan	clean	clean	clean	0.9999936341010733	
+/truenas-big/images/e0/6e/e06e5786e15db25a93a2925b9294f128ba23d89508221092d35408313658cde3.JPEG	wan	clean	clean	clean	0.9943878379535238	
+/truenas-big/images/23/f9/23f917c915db9ea25852e22b75dcbd7b89585967dd97f37a737c4442705461cf.JPEG	wan	clean	clean	clean	0.9994948185204741	
+/truenas-big/images/20/4b/204b4da82a789bd942ad8c2100e10f08f9a18b823ed4bf3331e993b9901efef6.JPEG	wan	clean	clean	clean	0.9942156354130144	
+/truenas-big/images/fd/0a/fd0a21d826093ae58dad32c75d0466699b83881871423f9754f28147c67b7c30.JPEG	shareveo3	clean	clean	clean	0.9661427805849273	
+/truenas-big/images/be/bd/bebd1db6d52ecff0528ca228b68bac8d293680bd45363b55f340766aa23bcb7c.JPEG	shareveo3	clean	clean	clean	0.9999489514989182	
+/truenas-big/images/b4/09/b40954b2795ec835f3d8d5379f619da923c90845a4256706a160fe21060c5ed9.JPEG	shareveo3	clean	watermarked	grok	0.9999141253474823	
+/truenas-big/images/c2/e0/c2e0f8acf62a29c0c9ea401d57fbc8f2f2acff6c2124bb50a2a58fcdf8e1d977.JPEG	shareveo3	clean	watermarked	grok	0.999632904120009	
+/truenas-big/images/f1/30/f1300a365badadc0f91edd3f9cb1a7d28a3f32511f18f9b762ead26a71a4b367.JPEG	shareveo3	clean	watermarked	grok	0.9892138475941118	
+/truenas-big/images/fe/08/fe084501396b8b4cb9e28af6af36e376f0354277ad6489e680be9b2f96f03215.JPEG	shareveo3	clean	watermarked	grok	0.9999972818720061	[1182, 637, 1279, 708]
+/truenas-big/images/0d/25/0d25f0c7756fcc21b8d43d78ed776c16250758970709091d11635558933a320a.JPEG	shareveo3	clean	watermarked	grok	0.9982599696843876	
+/truenas-big/images/73/ac/73ac0bf0b838ff53e85cf1d91439b7115cb1b6d3837a60775d08a073ab1c063c.JPEG	shareveo3	clean	watermarked	grok	0.025188503809031332	
+/truenas-big/images/bb/f0/bbf010fd2b00ef9cc29bae882581285caae24a1db76f41585d6a5b0331daab8e.JPEG	shareveo3	clean	watermarked	grok	0.06908944591096262	
+/truenas-big/images/3e/b5/3eb536861f19b2f83bdb617e2df2b4d3d995af42af8fe025b8c0f20e06e33edf.JPEG	shareveo3	clean	watermarked	grok	0.9997255560826531	
+/truenas-big/images/d8/7c/d87cdd1261ee8bff458eb02200e21634f2d9d16649633081566deda32a56e88c.JPEG	shareveo3	clean	watermarked	grok	0.5886027565812495	
+/truenas-big/images/60/09/6009fa40b33f994582a8352b3d6a5ebce6ebdb5e75ce9fdb33d9f5533a82465f.JPEG	shareveo3	clean	watermarked	grok	0.9890595659781143	
+/truenas-big/images/5d/a1/5da14e182e197e2b0ecf2cbd3eba6bf97ea43a1047c7294c4d06f4d20d174871.JPEG	shareveo3	clean	watermarked	grok	0.9998334841687877	
+/truenas-big/images/48/12/48122b69e5f9bb845fb3c5dc63c1c8fa909569e45e4a9a35a34802fd8ed5a6d7.JPEG	shareveo3	clean	watermarked	grok	0.9990002007021502	
+/truenas-big/images/bc/90/bc90910746d4d57918235d62d0d3bd4dbfb8a4bc2c1d75627b40100598dd4cd0.JPEG	shareveo3	clean	clean	clean	0.9991319157172374	
+/truenas-big/images/11/90/119054fea815b490eb3d16fe9d5df32daf37a0a4349e09add4e35ae78f262168.JPEG	shareveo3	clean	watermarked	grok	0.02819832479779987	
+/truenas-big/images/3b/fe/3bfec660486998e6be8ab8622a6ef026e87964b59be97e9acd9e483ede6bb93c.JPEG	shareveo3	clean	clean	clean	0.9994998292720592	
+/truenas-big/images/ea/11/ea117f1fefa974fa9314025ed12d2f67189a8cee63a8f93c3203a4d021500f8a.JPEG	shareveo3	clean	watermarked	grok	0.9999999713461235	
+/truenas-big/images/bb/bc/bbbc976d9036b669e7a5e459d6f65ad5db6c07c4988d0efb4f8559a48ad7f1e5.JPEG	shareveo3	clean	clean	clean	0.9994637897886444	[0, 573, 145, 637]
+/truenas-big/images/29/2a/292af0780c9164df29f3c8a61e67d47ece51b950803364fb3e1d351e77f10a90.JPEG	shareveo3	clean	watermarked	grok	0.984971302133983	
+/truenas-big/images/d5/bc/d5bc3f7800529d0a58d9d21ec8674bb519d36f9a7edb265a12a807ba4bed5461.JPEG	shareveo3	clean	clean	clean	0.9983325923181336	
+/truenas-big/images/e9/70/e9700d08131cfa68fb9f2d226e1254a7c69d130fd7c604ca4f288877ebbe796a.JPEG	shareveo3	clean	watermarked	grok	0.9996979335226988	
+/truenas-big/images/c0/e1/c0e17a4e9899a12f35a76ba505d22260ddd604ea6314bf349bc5bd0011ce1246.JPEG	shareveo3	clean	clean	clean	0.9987252552073816	
+/truenas-big/images/20/d4/20d44ce822367580d3d88ed47feddefcc3e3d159e29df26f067157f3b9d66a1d.JPEG	shareveo3	clean	clean	clean	0.9993273372174034	
+/truenas-big/images/0c/63/0c63274aedf3898f3e4a0d4ccb5998952f72a56a12a3d283ada3e50837175a06.JPEG	shareveo3	clean	clean	clean	0.9999419889690896	
+/truenas-big/images/1e/7e/1e7ea4778baba52459f5af4a8399a03447ef0a24e160843a7383c27e82b4086a.JPEG	shareveo3	clean	clean	clean	0.9974660525138188	
+/truenas-big/images/04/0e/040e1167c58a0d64e7f0cc523bbdc76594d3b9dfc20b6722b89e367f2699fd1d.JPEG	shareveo3	clean	watermarked	grok	0.9999815161344261	
+/truenas-big/images/c7/6f/c76fab42f01e543ab523392be00e45bae87106dd3f9702f69a3eafa3c63ef799.JPEG	shareveo3	clean	clean	clean	0.9986198050411733	
+/truenas-big/images/ad/6b/ad6bc1773106790089297c97334860e66c2c408f9a3e89b1c4aff99b9d9231d6.JPEG	shareveo3	clean	watermarked	grok	0.9999894630230156	
+/truenas-big/images/f2/36/f236afd8643a26ff34050becf1d2b543f97e289527be1fe20f71985ef6144101.JPEG	shareveo3	clean	watermarked	grok	0.9999982870026392	
+/truenas-big/images/d1/8e/d18e75bf44147fc9e6c6202bd6443b923c5d10e2876dfe403bd1e58a01912fdd.JPEG	shareveo3	clean	watermarked	grok	0.16680976748466492	[1199, 642, 1280, 709]
+/truenas-big/images/52/f4/52f456febe82eeb5fecdcf779d330194cf78b0b46d11e2426fd25fa88a3ac1c0.JPEG	shareveo3	clean	watermarked	grok	0.9125667225315339	
+/truenas-big/images/5a/a4/5aa4b4690ebede71664321cb8846d1aabfe497d631a2eead816e544edf30db8a.JPEG	shareveo3	clean	watermarked	grok	0.8597262491316697	
+/truenas-big/images/8b/c3/8bc3d54a77db39157efba98f771c2ddf04180621bad69f31093bf27b303e432e.JPEG	shareveo3	clean	watermarked	grok	0.8767150301808128	[1201, 560, 1279, 623]
+/truenas-big/images/87/40/874077fdcb9d81c3d4b590902e7c1454065d912025267d85970bef385f7fcf85.JPEG	shareveo3	clean	watermarked	grok	0.9999928080336872	
+/truenas-big/images/c2/0f/c20f686ce67259e0fc2673ed1a2c2c4e8d89c4c57aeb1c6d723d2e0194d5be7d.JPEG	shareveo3	clean	watermarked	grok	0.9999884861583236	
+/truenas-big/images/89/85/89852064854fea8912d9521cfdc38c4cf0165e8019252d1af913397e6532b1ad.JPEG	shareveo3	clean	watermarked	grok	0.9999999946110996	
+/truenas-big/images/e5/1e/e51e52a095668e84ed5a08d4d5956ad587e297c027115aa0d73c6f2c37f4e348.JPEG	shareveo3	clean	clean	clean	0.999999584618509	
+/truenas-big/images/ae/94/ae94cb3425cceabcfb864844d8a4cbb3943a1bb84c5befac98628ba069024fa3.JPEG	shareveo3	clean	clean	clean	0.9998817205756694	
+/truenas-big/images/50/6b/506bd3b8e026408a8a793666eb28e488ce3e1fa6f96f0713a05ddfa4f12b6d8d.JPEG	shareveo3	clean	clean	clean	0.7939122567131635	
