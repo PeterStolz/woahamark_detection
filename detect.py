@@ -38,7 +38,10 @@ YOLO_CLASSES = ['dalle', 'gemini', 'grok', 'minimax_hailuo', 'text_tpdne']
 # Only its sora/openai detections are used, and only at high confidence —
 # on the val split its 5-class heads are weaker than v1's.
 YOLO_V3 = None
-YOLO_V3_CLASSES = ['dalle', 'gemini', 'grok', 'minimax_hailuo', 'text_tpdne', 'sora', 'openai_logo']
+YOLO_V4 = None  # exp20: sora/openai fallback (v4 weights) behind the v5 primary aux
+# exp20: v5 weights add meta_ai (Meta 'IMAGINED WITH AI' badge) as class 7;
+# with the older 7-class v3/v4 weights index 7 simply never appears.
+YOLO_V3_CLASSES = ['dalle', 'gemini', 'grok', 'minimax_hailuo', 'text_tpdne', 'sora', 'openai_logo', 'meta_ai']
 SORA_CONF = 0.50
 
 TEMPLATE_LABEL_MAP = {
@@ -211,11 +214,19 @@ def load_yolo():
     _patch_nms_if_needed()
     yolo_path = Path(__file__).parent / "yolo_watermark.pt"
     YOLO_MODEL = YOLO(str(yolo_path))
-    global YOLO_V3
-    v3_path = Path(__file__).parent / "yolo_watermark_v3.pt"
-    if v3_path.exists():
-        YOLO_V3 = YOLO(str(v3_path))
-    print(f"  YOLO loaded: {yolo_path} (+v3: {YOLO_V3 is not None})", flush=True)
+    global YOLO_V3, YOLO_V4
+    # exp20: v5 (adds meta_ai) is primary aux; v4 kept as sora/openai fallback —
+    # v5's sora head is slightly weaker (46 vs 50 on wild sora_fresh), the
+    # union recovers it. Both fire 0 specialist classes on val at >=0.5.
+    v5_path = Path(__file__).parent / "yolo_watermark_v5.pt"
+    v4_path = Path(__file__).parent / "yolo_watermark_v3.pt"
+    if v5_path.exists():
+        YOLO_V3 = YOLO(str(v5_path))
+        if v4_path.exists():
+            YOLO_V4 = YOLO(str(v4_path))
+    elif v4_path.exists():
+        YOLO_V3 = YOLO(str(v4_path))
+    print(f"  YOLO loaded: {yolo_path} (+aux: {YOLO_V3 is not None}, +fallback: {YOLO_V4 is not None})", flush=True)
 
 def yolo_detect(image_path):
     """Run YOLO, return (label, confidence, bbox) or None."""
@@ -230,21 +241,30 @@ def yolo_detect(image_path):
     x1, y1, x2, y2 = boxes.xyxy[best_idx].tolist()
     return {"label": cls, "confidence": conf, "bbox": [int(x1), int(y1), int(x2), int(y2)]}
 
-def yolo_detect_sora(image_path):
-    """v3 detector, but only trusted for confident sora/openai_logo hits."""
-    if YOLO_V3 is None:
-        return None
-    results = YOLO_V3.predict(image_path, verbose=False, device=YOLO_DEVICE, imgsz=1280, conf=SORA_CONF)
+def _specialist_hit(model, image_path):
+    results = model.predict(image_path, verbose=False, device=YOLO_DEVICE, imgsz=1280, conf=SORA_CONF)
     boxes = results[0].boxes
     if len(boxes) == 0:
         return None
     best_idx = int(boxes.conf.argmax())
     cls = YOLO_V3_CLASSES[int(boxes.cls[best_idx])]
-    if cls not in ("sora", "openai_logo"):
+    # exp20: meta_ai joins the trusted specialist classes (both aux models fire
+    # 0 of these three on the entire val set at >=0.5 — measured before enabling)
+    if cls not in ("sora", "openai_logo", "meta_ai"):
         return None
     conf = float(boxes.conf[best_idx])
     x1, y1, x2, y2 = boxes.xyxy[best_idx].tolist()
     return {"label": cls, "confidence": conf, "bbox": [int(x1), int(y1), int(x2), int(y2)]}
+
+def yolo_detect_sora(image_path):
+    """Aux detectors, only trusted for confident sora/openai/meta_ai hits.
+    v5 first; v4 fallback recovers its slightly stronger sora head."""
+    if YOLO_V3 is None:
+        return None
+    hit = _specialist_hit(YOLO_V3, image_path)
+    if hit is None and YOLO_V4 is not None:
+        hit = _specialist_hit(YOLO_V4, image_path)
+    return hit
 
 
 # ── Verification gate (exp12) ──
@@ -477,7 +497,9 @@ def detect(image_path: str) -> dict:
         # sees sora/openai on such an image, trust it: 26/31 sora_fresh
         # mislabels fixed, 0 val changes, 0 rewrites on any other wild
         # partition (measured on wild-v2, 1140 imgs).
-        if pred in ("grok", "minimax_hailuo"):
+        # exp20: gemini joins the rewrite sources — v1 labels the Meta badge
+        # gemini (8/80 wild moviegen); v5 fires 0 specialist classes on val.
+        if pred in ("grok", "minimax_hailuo", "gemini"):
             sora_fix = yolo_detect_sora(image_path)
             if sora_fix:
                 pred = sora_fix["label"]
