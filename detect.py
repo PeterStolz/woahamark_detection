@@ -215,17 +215,20 @@ def load_yolo():
     yolo_path = Path(__file__).parent / "yolo_watermark.pt"
     YOLO_MODEL = YOLO(str(yolo_path))
     global YOLO_V3, YOLO_V4
-    # exp20: v5 (adds meta_ai) is primary aux; v4 kept as sora/openai fallback —
-    # v5's sora head is slightly weaker (46 vs 50 on wild sora_fresh), the
-    # union recovers it. Both fire 0 specialist classes on val at >=0.5.
-    v5_path = Path(__file__).parent / "yolo_watermark_v5.pt"
+    # exp21: v6 (v5 + 1750 yfcc hard negatives) is primary aux — cuts the wild
+    # FP tail 139->6 per 600 v4-flagged yfcc frames with sora recall equal to
+    # v4. v4 kept as sora/openai fallback for the union. v6 needs a 0.55
+    # specialist bar (one val hailuo image scores sora 0.502 — below-bar noise
+    # that would poison val macro via the zero-support-class trap); v4 stays
+    # at 0.50 (fires 0 specialist classes on val, measured).
+    for name in ("yolo_watermark_v6.pt", "yolo_watermark_v5.pt", "yolo_watermark_v3.pt"):
+        p = Path(__file__).parent / name
+        if p.exists():
+            YOLO_V3 = YOLO(str(p))
+            break
     v4_path = Path(__file__).parent / "yolo_watermark_v3.pt"
-    if v5_path.exists():
-        YOLO_V3 = YOLO(str(v5_path))
-        if v4_path.exists():
-            YOLO_V4 = YOLO(str(v4_path))
-    elif v4_path.exists():
-        YOLO_V3 = YOLO(str(v4_path))
+    if YOLO_V3 is not None and v4_path.exists() and not str(p).endswith("v3.pt"):
+        YOLO_V4 = YOLO(str(v4_path))
     print(f"  YOLO loaded: {yolo_path} (+aux: {YOLO_V3 is not None}, +fallback: {YOLO_V4 is not None})", flush=True)
 
 def yolo_detect(image_path):
@@ -241,29 +244,33 @@ def yolo_detect(image_path):
     x1, y1, x2, y2 = boxes.xyxy[best_idx].tolist()
     return {"label": cls, "confidence": conf, "bbox": [int(x1), int(y1), int(x2), int(y2)]}
 
-def _specialist_hit(model, image_path):
-    results = model.predict(image_path, verbose=False, device=YOLO_DEVICE, imgsz=1280, conf=SORA_CONF)
+def _specialist_hit(model, image_path, conf_bar):
+    results = model.predict(image_path, verbose=False, device=YOLO_DEVICE, imgsz=1280, conf=conf_bar)
     boxes = results[0].boxes
     if len(boxes) == 0:
         return None
     best_idx = int(boxes.conf.argmax())
     cls = YOLO_V3_CLASSES[int(boxes.cls[best_idx])]
-    # exp20: meta_ai joins the trusted specialist classes (both aux models fire
-    # 0 of these three on the entire val set at >=0.5 — measured before enabling)
+    # exp20: meta_ai joins the trusted specialist classes (measured val-safe
+    # at each model's bar before enabling)
     if cls not in ("sora", "openai_logo", "meta_ai"):
         return None
     conf = float(boxes.conf[best_idx])
+    if conf < conf_bar:
+        return None
     x1, y1, x2, y2 = boxes.xyxy[best_idx].tolist()
     return {"label": cls, "confidence": conf, "bbox": [int(x1), int(y1), int(x2), int(y2)]}
 
+V6_SPECIALIST_CONF = 0.55  # exp21: clears the 0.502 val noise hit with margin
+
 def yolo_detect_sora(image_path):
     """Aux detectors, only trusted for confident sora/openai/meta_ai hits.
-    v5 first; v4 fallback recovers its slightly stronger sora head."""
+    v6 primary (bar 0.55); v4 fallback (bar 0.50) completes the union."""
     if YOLO_V3 is None:
         return None
-    hit = _specialist_hit(YOLO_V3, image_path)
+    hit = _specialist_hit(YOLO_V3, image_path, V6_SPECIALIST_CONF if YOLO_V4 is not None else SORA_CONF)
     if hit is None and YOLO_V4 is not None:
-        hit = _specialist_hit(YOLO_V4, image_path)
+        hit = _specialist_hit(YOLO_V4, image_path, SORA_CONF)
     return hit
 
 
