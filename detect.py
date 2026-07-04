@@ -215,13 +215,13 @@ def load_yolo():
     yolo_path = Path(__file__).parent / "yolo_watermark.pt"
     YOLO_MODEL = YOLO(str(yolo_path))
     global YOLO_V3, YOLO_V4
-    # exp21: v6 (v5 + 1750 yfcc hard negatives) is primary aux — cuts the wild
-    # FP tail 139->6 per 600 v4-flagged yfcc frames with sora recall equal to
-    # v4. v4 kept as sora/openai fallback for the union. v6 needs a 0.55
-    # specialist bar (one val hailuo image scores sora 0.502 — below-bar noise
-    # that would poison val macro via the zero-support-class trap); v4 stays
-    # at 0.50 (fires 0 specialist classes on val, measured).
-    for name in ("yolo_watermark_v6.pt", "yolo_watermark_v5.pt", "yolo_watermark_v3.pt"):
+    # exp21/22: hard-negative rounds from catalog-scale FP mining. v7 (= v6 +
+    # 320 non-sora artifact negatives) is primary aux: artifact FP holdout
+    # 111->6, yfcc holdout unchanged, sora_fresh 52 standalone (best),
+    # moviegen 79/80, and 0 specialist-class hits on val at >=0.5 — so it
+    # runs at the standard 0.50 bar (v6 needed 0.55 for one 0.502 noise hit).
+    # v4 kept as sora/openai fallback for the union.
+    for name in ("yolo_watermark_v7.pt", "yolo_watermark_v6.pt", "yolo_watermark_v5.pt", "yolo_watermark_v3.pt"):
         p = Path(__file__).parent / name
         if p.exists():
             YOLO_V3 = YOLO(str(p))
@@ -261,14 +261,13 @@ def _specialist_hit(model, image_path, conf_bar):
     x1, y1, x2, y2 = boxes.xyxy[best_idx].tolist()
     return {"label": cls, "confidence": conf, "bbox": [int(x1), int(y1), int(x2), int(y2)]}
 
-V6_SPECIALIST_CONF = 0.55  # exp21: clears the 0.502 val noise hit with margin
-
 def yolo_detect_sora(image_path):
     """Aux detectors, only trusted for confident sora/openai/meta_ai hits.
-    v6 primary (bar 0.55); v4 fallback (bar 0.50) completes the union."""
+    v7 primary; v4 fallback completes the union. Both fire 0 specialist
+    classes on val at >=0.50 (measured)."""
     if YOLO_V3 is None:
         return None
-    hit = _specialist_hit(YOLO_V3, image_path, V6_SPECIALIST_CONF if YOLO_V4 is not None else SORA_CONF)
+    hit = _specialist_hit(YOLO_V3, image_path, SORA_CONF)
     if hit is None and YOLO_V4 is not None:
         hit = _specialist_hit(YOLO_V4, image_path, SORA_CONF)
     return hit
